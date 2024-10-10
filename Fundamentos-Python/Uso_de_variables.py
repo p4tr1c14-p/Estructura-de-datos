@@ -1,15 +1,16 @@
 # Patricia Pérez Cruz
 # 21 de octubre de 2005
-# En este archivo se ejemplifica el uso de variables en Pythonnn
+# En este archivo se ejemplifica el uso de variables en Pythonn
 # Notas:
 # En Python todo es un objeto.
-# Variable - una variable es un nombre que almacena un valor guardado en la memoria temporal
+# Variable - Una variable es un nombre que almacena un valor guardado en la memoria temporal
 
 # Toda variable requiere un valor inicial
+print()
 semestre = 3        # es una variable que apunta a un objeto de tipo int con valor de 3
 print(semestre)     # imprime el valor de la variable
 semestre = 4        # la variable ya no apunta al objeto anterior, sino a uno nuevo, por lo que se pierde la referencia
-print(semestre)
+print(semestre)     # imprime el valor de la variable ya cambiada
 
 # Se crean varias variables para ejemplificar su uso
 nombre = "Patricia Pérez Cruz"  # variable de tipo String
@@ -58,7 +59,7 @@ print()
 # - Utilizar nombres descriptivos de acuerdo a su uso. Por ejemplo: edad, en lugar de e.
 
 # Ejemplos correctos y con buenas prácticas
-fecha_nacimiento = "1 de enero del 2000"
+fecha_nacimiento = "21 de octubre del 2005"
 clase = "Estructuras de Datos"
 horas_estudio = 8
 nombre = "Patricia"
