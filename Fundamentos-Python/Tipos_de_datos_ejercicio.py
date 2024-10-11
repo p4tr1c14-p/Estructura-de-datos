@@ -12,9 +12,9 @@ comida = 135.5
 otros = 34.5
 fue_mayor = True
 
-# Aqui voy a imprimir las variables, añadiendo información adicional para comprender lo que se imprime
+# Aquí voy a imprimir las variables, añadiendo información adicional para comprender lo que se imprime
 
-print() #Estos saltos de linea solo los pongo porque me gusta como se ve con ellos estéticamente
+print() #Estos saltos de línea solo los pongo porque me gusta como se ve con ellos estéticamente
 print("*** GASTOS DIARIOS ***")
 print()
 print("Día: ", dia)
@@ -25,7 +25,7 @@ print("¿Fue mayor a mi presupuesto?:", fue_mayor)
 print()
 
 
-# Aqui voy a cambiar los datos para el dia Martes
+# Aquí voy a cambiar los datos para el dia Martes
 
 dia = "Martes"
 pasaje = 12
@@ -36,7 +36,7 @@ fue_mayor = False
 # Ahora voy a volver a imprimir pero con los datos ya modificados
 
 print("*** GASTOS DIARIOS ***")
-print() #Estos saltos de linea solo los pongo porque me gusta como se ve con ellos estéticamente
+print() #Estos saltos de línea solo los pongo porque me gusta como se ve con ellos estéticamente
 print("Día: ", dia)
 print("Pasaje: ", pasaje)
 print("Comida: ", comida)
