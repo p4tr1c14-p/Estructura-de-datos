@@ -14,7 +14,7 @@ fue_mayor = True
 
 # Aqui voy a imprimir las variables, añadiendo información adicional para comprender lo que se imprime
 
-print()
+print() #Estos saltos de linea solo los pongo porque me gusta como se ve con ellos estéticamente
 print("*** GASTOS DIARIOS ***")
 print()
 print("Día: ", dia)
@@ -36,7 +36,7 @@ fue_mayor = False
 # Ahora voy a volver a imprimir pero con los datos ya modificados
 
 print("*** GASTOS DIARIOS ***")
-print()
+print() #Estos saltos de linea solo los pongo porque me gusta como se ve con ellos estéticamente
 print("Día: ", dia)
 print("Pasaje: ", pasaje)
 print("Comida: ", comida)
