@@ -39,7 +39,7 @@ var_int = 123
 var_float = 123.321
 print()
 print("Conversión de número a cadena.")
-print(f"Los números {var_int} y {var_float} se convierten a cadena utilizando str(var_int): {str(var_cadena)}, y "
+print(f"Los números {var_int} y {var_float} se convierten a cadena utilizando str(var_int): {str(var_int)}, y "
       f"str(var_float): {str(var_float)}.")
 
 
@@ -71,3 +71,4 @@ print(f"¿El valor de {var_cadena} es verdadero? {es_verdadero}.")
 var_cadena = " "
 es_verdadero = bool(var_cadena)
 print(f"¿El valor de {var_cadena} es verdadero? {es_verdadero}.")
+
