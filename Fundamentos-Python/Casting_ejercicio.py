@@ -12,8 +12,8 @@ de números a cadenas, y de valores a booleanos
 print("*** Convertir numeros a cadenas ***")
 print()
 
-var_int = 3.14159265
-print(f"El valor {var_int} será convertida a cadena: {str(var_int)}.")
+var_float = 3.14159265
+print(f"El valor {var_float} será convertida a cadena: {str(var_float)}.")
 print()
 var_int = 12
 print(f"El valor {var_int} será convertida a cadena: {str(var_int)}.")
