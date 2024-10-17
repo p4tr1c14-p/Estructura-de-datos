@@ -1,4 +1,10 @@
 """
+Nombre: Patricia Pérez Cruz
+Fecha: 14 de octubre de 2024
+Descripción:
+Mi primer ejercicio sobre la entrada de datos por consola
+en Python para interactuar con el usuario con valores dinámicos.
+
 ENTRADA CONSOLA EJERCICIO
 
 a) Pida 2 números decimales por consola al usuario utilizando la función input.
