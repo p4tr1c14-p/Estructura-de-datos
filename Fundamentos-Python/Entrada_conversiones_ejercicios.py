@@ -22,7 +22,7 @@ tiempo = input("¿Tiene más de 5 años en la unsij? (si/no): ")
 
 num_cubo = int(cubo)
 num_horas = float(horas)
-tiempo = tiempo.lower() == "si"
+tiempo = tiempo.lower() == "si" #Aquí ya lo convertí a booleano, para que así me salga "True" cuando me digiten "si".
 
 
 """
