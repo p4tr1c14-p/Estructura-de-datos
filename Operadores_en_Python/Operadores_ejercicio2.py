@@ -2,7 +2,7 @@
 Nombre:Patricia Pérez Cruz
 Fecha: 24 de octubre de 2024
 Descripción:
-Segudo ejercicio para poner en práctica mis conocimientos adquiridos sobre
+Segundo ejercicio para poner en práctica mis conocimientos adquiridos sobre
 los operadores lógicos
 '''
 
