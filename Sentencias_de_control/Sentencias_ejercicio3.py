@@ -21,7 +21,7 @@ membresia = membresia.lower() == "si"
 
 if membresia:
     if total >= 1000:
-        descuento = (total * 8)/100 #➡️ Calculé el descuento
+        descuento = (total * 8)/100 #➡️ Calculé el descuento (Por la lección, sé que no importa si lleva o no paréntesis, pero aun así se lo coloqué)
         total_a_pagar = total - descuento #➡️ Apliqué el descuento restándolo del total a pagar
         print("Tu descuento es del 8 %.")
         print(f"El total es de: {total_a_pagar:.2f}")
