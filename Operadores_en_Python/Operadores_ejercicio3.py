@@ -24,12 +24,9 @@ contraseña_entrada = input("Ingrese su contraseña: ")
 #⬆️ A continuación compararé las dos cadenas para saber si lo que ingresaron coincide con lo declarado internamente
 #pero para eso primero voy a convertirlos a booleanos
 
-usuario = usuario_entrada == USUARIO_CONSTANTE
-contraseña = contraseña_entrada == CONTRASEÑA_CONSTANTE
-
 #e) Muestre el resultado en consola como valor booleano (True/False).
 
-print(f"¿El acceso fue correcto?: {usuario and contraseña}")
+print(f"¿El acceso fue correcto?: {usuario_entrada == USUARIO_CONSTANTE and contraseña_entrada == CONTRASEÑA_CONSTANTE}")
 
 #d) Si ambas cadenas son iguales a las cadenas declaradas internamente, entonces el usario se autenticó correctamente.
 #⬆️ Lo anterior se va a comprobar si el en "print" el resultado es "TRUE" o "FALSE"
