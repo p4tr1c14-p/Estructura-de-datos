@@ -21,7 +21,7 @@ decisiones más sofisticadas dentro de nuestros programas.
  % MODULO
  ➡️ Pero estos dos fueron nuevos para mí 😀
  // DIVISIÓN QUE SOLO ME DA EL RESULTADO ENTERO
- ** ES PARA ELEVAR EL PRIMER NÚMERO A LA PONTENCIA DEL SEGUNDO NÚMERO
+ ** ES PARA ELEVAR A UN NÚMERO
 """
 
 # Se solicitan dos números enteros al usuario.
@@ -38,7 +38,7 @@ print(f"La multiplicación de ({numero1} * {numero2}) es: {numero1 * numero2}") 
 print(f"La división de ({numero1} / {numero2}) es: {(numero1 / numero2):.2f}")  #➡️ Muestra la división con dos decimales (Notar la forma para mostrar dos decimales)
 print(f"La división entera de ({numero1} // {numero2}) es: {numero1 // numero2}") #➡️ Realiza la división entera
 print(f"El módulo de ({numero1} % {numero2}) es: {numero1 % numero2}") #➡️ Calcula el residuo de la división
-print(f"La exponenciación  de ({numero1} ** {numero2}) es: {numero1 ** numero2}") #➡️ Eleva el primer número a la potencia del segundo
+print(f"La exponenciación  de ({numero1} ** {numero2}) es: {numero1 ** numero2}") #
 
 
 """
