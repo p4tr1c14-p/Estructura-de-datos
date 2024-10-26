@@ -23,8 +23,5 @@ valor_four = valor_cuatro.lower() == "si"
 
 #c) Muestre el resultado en consola como valor booleano (True/False).
 
-expresion_uno = valor_one or valor_two #➡️ Primero lo comparo con un or
-expresion_dos = valor_three or valor_four
-
-print(f"El resultado de la expresión boolena es: {expresion_uno and expresion_dos}") #➡️ Aquí ya lo comparo con un and
+print(f"El resultado de la expresión booleana es: {(valor_one or valor_two) and (valor_three or valor_four)}") #➡️ En una sola línea hago las dos comparaciones
 
