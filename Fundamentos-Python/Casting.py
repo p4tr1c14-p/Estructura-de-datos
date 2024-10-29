@@ -13,7 +13,7 @@ De cadena a entero, de cadena a número flotante, y viceversa.
 '''
 
 # *****   Conversión de cadena a entero     *****
-var_cadena = "951" #Esto se guardo como cadena por las dos comillas "", de lo contrario sería número (apenas lo note                                                     )
+var_cadena = "951" #Esto se guardó como cadena por las dos comillas "", de lo contrario sería número (apenas lo note                                                     )
 var_int = int(var_cadena)
 
 # Utiliza la letra "f" antes de las comillas para indicar que la cadena será formateada.
