@@ -9,7 +9,7 @@ de números a cadenas, y de valores a booleanos
 
 # a) Convierta los siguientes números en cadenas: 3.14159265, 12, 0.
 
-print("*** Convertir numeros a cadenas ***")
+print("*** Convertir números a cadenas ***")
 print()
 
 var_float = 3.14159265
