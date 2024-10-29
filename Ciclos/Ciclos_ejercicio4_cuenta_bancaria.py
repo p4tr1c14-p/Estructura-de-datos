@@ -1,3 +1,8 @@
+'''
+Nombre: Patricia Pérez Cruz
+Fecha: 29 de octubre de 2024
+Descripción: Este programa es un ejercicio sobre los ciclos while
+'''
 print("*** Bienvenido a Banco Azteca ***")
 
 opciones = -1

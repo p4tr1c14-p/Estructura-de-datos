@@ -1,3 +1,9 @@
+'''
+Nombre: Patricia Pérez Cruz
+Fecha: 29 de octubre de 2024
+Descripción: Este programa es un ejercicio sobre los ciclos while
+'''
+
 print("*** Calculadora básica ***")
 opcion = -1
 while opcion != 0:
