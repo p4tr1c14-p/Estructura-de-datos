@@ -28,7 +28,7 @@ print("Tipo de dato decimal:", mi_variable_decimal)
 
 # Cadena de texto
 mi_variable_texto_nombre = "Patricia"
-mi_variable_texto_apellido = 'Pérez' #->Con esta parte me quedo más claro que yo puedo declarar de dos
+mi_variable_texto_apellido = 'Pérez' #->Con esta parte me quedó más claro que yo puedo declarar de dos
 # formas las cadenas ya sea entre comillas dobles ( "" ) o comillas simples ( '' )
 
 print("Cadena de texto:", mi_variable_texto_nombre, mi_variable_texto_apellido)
