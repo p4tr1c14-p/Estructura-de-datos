@@ -30,7 +30,8 @@ numero_final = int(input("Ingrese el número final de la cuenta: "))
 aux = 1
 while aux <= numero_final:
     if aux % 3 == 0 and aux % 5 == 0:
-        print("Licenciatura en Informática", end="\n")
+        print("Licenciatura en Informática", end=" ")
+        print()
     elif aux % 3 == 0:
         print("Licenciatura,", end=" ")
     elif aux % 5 == 0:
