@@ -12,14 +12,14 @@ numero_secreto = randint(1, 100)  #➡️ Genero un número aleatorio entre 1 y 
 intentos = 5  #➡️ Establezco el número de intentos permitidos
 intento_actual = 1  #➡️ Inicializo el contador de intentos
 
-print("¡Bienvenido al juego de adivinanza! 🤩🎉")  #➡️ Mensaje de bienvenida
-# Inicio del bucle de intentos
+print("¡Bienvenido al juego de adivinanza! 🤩🎉")  #➡️ Mi mensaje de bienvenida
+#➡️ Inicio con e bucle de intentos
 while intento_actual <= intentos:  # ➡️ Mientras no se superen los intentos
     adivina = int(input(f"Número de intento {intento_actual}. Ingresa un número de 1-100: "))  #➡️ Indico el intento actual y solicito el número
 
 # Verifico si el número ingresado es correcto
     if adivina == numero_secreto:  #➡️ Compruebo si el número ingresado es igual al número secreto
-        print(f"¡Felicidades! Adivinaste el número {numero_secreto} en {intento_actual} intentos.")
+        print(f"¡Felicidades!, adivinaste el número en {intento_actual} intentos.")
         break  #➡️ Salgo del bucle si el jugador adivina correctamente
     elif adivina < numero_secreto:  # ➡️ Si el número ingresado es menor que el número secreto
         print("El número a adivinar es mayor.")  #➡️ Indico que el número es mayor
