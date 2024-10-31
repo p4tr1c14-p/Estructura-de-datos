@@ -1,3 +1,11 @@
+"""
+Patricia Pérez Cruz
+31 de octubre de 2024.
+Descripción:
+Este programa determina el área y el perímetro de un rectángulo o de un círculo.
+"""
+print("*** Programa que calcula el área y el perímetro ***")
+
 PI = 3.1416 #➡️ Define una constante para el valor de pi
 opcion = -1 #➡️ Inicialicé la variable opcion con un valor distinto de 0 para poder entrar en el ciclo
 while opcion != 0: #➡️ Este ciclo se repetirá mientras la opción seleccionada no sea 0
