@@ -1,12 +1,9 @@
-#Genera un número aleatorio y hz que lo adivinen una solo vez.
-from random import randint
+fila = int(input("Ingrese el número de filas que desee: "))
+aux = 0
 
-numeros=randint(1,50)
-variable=0
-
-while variable!=numeros:
-    variable=input("que número cres que es?:")
-    if variable==numeros:
-        print("El numero es el correcto")
-    else:
-        print(f"El numero es:{numeros}")
+contador = fila
+for x in range(1, fila + 1) :
+    espacio = " " * x
+    asteriscos = "*" * contador
+    print(f" {espacio}{asteriscos}")
+    contador -= 1
