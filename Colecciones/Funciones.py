@@ -16,21 +16,22 @@ def menu():
 
 def calculadora(opcion, numerouno, numerodos):
     if opcion== 1:
-        print(numerouno + numerodos)
+        variable = (numerouno + numerodos)
     elif opcion== 2:
-        print(numerouno - numerodos)
+        variable= (numerouno - numerodos)
     elif opcion == 3:
-        print(numerouno * numerodos)
+        variable = (numerouno * numerodos)
     elif opcion == 4:
-        print(numerouno / numerodos)
+        variable = (numerouno / numerodos)
     elif opcion == 5:
-        print(numerouno // numerodos)
+        variable = (numerouno // numerodos)
     elif opcion == 6:
-        print(numerouno % numerodos)
+        variable = (numerouno % numerodos)
     elif opcion == 7:
-        print(numerouno ** numerodos)
+        variable = (numerouno ** numerodos)
+    return variable
 
 numerouno = int(input("Ingrese un número: "))
 numerodos = int(input("Ingrese otro número: "))
 opcion = menu()
-calculadora(opcion, numerouno, numerodos)
+print(f"Su resultado es: {calculadora(opcion, numerouno, numerodos)}")
