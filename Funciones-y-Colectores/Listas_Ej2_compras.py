@@ -1,7 +1,7 @@
-print(" *** Lista de compras *** ")
-opcion = -1
+print(" * Lista de compras * ")
+opcion = None
 lista = []
-cesta = []
+contador = 0
 def menu():
     print("Bienvenido a mi menú 😉")
     print("1) Ver lista")
@@ -11,23 +11,44 @@ def menu():
     opcion = int(input("Ingrese su selección: "))
     return opcion
 
-
 while opcion != 0:
     opcion = menu()
     if opcion == 1:
-        print(lista)
+        if lista:
+            print("Lista de compras:")
+            num = 0
+            for producto in lista:
+                print(f"{num}) {producto[0]} -- Cantidad: {producto[1]}")
+                num = num + 1
+        else:
+            print("La lista está vacía")
         print("------------------------------")
         print()
     elif opcion == 2:
         nombre = input("Ingrese el nombre de su producto: ")
         cantidad = input("Ingrese la cantidad de productos: ")
-        cesta.append(nombre)
-        cesta.append(cantidad)
-        lista.append(cesta)
+        lista.append([nombre, cantidad])
+        contador = contador + 1
+        #print(contador)
         print("------------------------------")
         print()
     elif opcion == 3:
-        borrar = int(input("Eliminar podructo de la lista: "))
-        lista, cesta.pop(borrar)
-        #lista.pop(borrar + 1)
+        print("Lista previa...")
+        cont = 0
+        for producto in lista:
+            print(f"{cont}) {producto[0]} -- Cantidad: {producto[1]}")
+            cont = cont + 1
+        borrar = int(input("Ingrese el número del producto a eliminar: "))
+        if borrar > contador:
+            print(f"No hay {contador} productos 🧐")
+            print("------------------------------")
+            print()
+        else:
+            borrar = borrar
+            lista.pop(borrar)
+            contador = contador - 1
+            #print(contador)
+            print("Producto eliminado correctamente.")
 
+
+print("Gracias por usar el programa 😊")
