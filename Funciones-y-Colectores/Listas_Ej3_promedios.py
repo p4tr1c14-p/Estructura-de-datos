@@ -49,7 +49,7 @@ def ver_promedios_alumnos():
 
 #alumnoo
 def anadir_alumno():
-    nombre = input("Ingrese el nombre del nuevo alumno: ")  # Sin .strip()
+    nombre = input("Ingrese el nombre del nuevo alumno: ")
     #existe?
     existe = False
     for alumno in calificaciones:
@@ -90,7 +90,6 @@ def eliminar_alumno():
             print(f"Alumno '{nombre}' no encontrado.")
 """
 
-# Función para ver el promedio grupal
 def ver_promedio_grupal():
     if len(calificaciones) == 0:
         print("No hay alumnos registrados.")
