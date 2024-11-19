@@ -1,8 +1,9 @@
 print(" *** PROMEDIOS DEL PARCIAL 1 *** ")
 
+# Lista para almacenar los datos de los alumnos
 calificaciones = []
 
-
+# Lista de materias
 materias = ["ESTRUCTURA DE DATOS", "DERECHO Y LEGISLACIÓN", "CONTABILIDAD", "ELECTRÓNICA", "ÁLGEBRA"]
 
 def menu():
@@ -49,7 +50,7 @@ def ver_promedios_alumnos():
 
 #alumnoo
 def anadir_alumno():
-    nombre = input("Ingrese el nombre del nuevo alumno: ")
+    nombre = input("Ingrese el nombre del nuevo alumno: ")  # Sin .strip()
     #existe?
     existe = False
     for alumno in calificaciones:
@@ -90,6 +91,7 @@ def eliminar_alumno():
             print(f"Alumno '{nombre}' no encontrado.")
 """
 
+# Función para ver el promedio grupal
 def ver_promedio_grupal():
     if len(calificaciones) == 0:
         print("No hay alumnos registrados.")
