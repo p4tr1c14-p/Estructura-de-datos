@@ -6,7 +6,6 @@ calificaciones = []
 # Lista de materias
 materias = ["ESTRUCTURA DE DATOS", "DERECHO Y LEGISLACIÓN", "CONTABILIDAD", "ELECTRÓNICA", "ÁLGEBRA"]
 
-# Función para mostrar el menú
 def menu():
     print("\nBienvenido a mi menú 😉")
     print("1) Ver calificaciones de alumno")
@@ -18,7 +17,7 @@ def menu():
     opcion = int(input("Ingrese su selección: "))
     return opcion
 
-# Función para ver las calificaciones de un alumno
+#cali alumnos
 def ver_calificaciones_alumno():
     if len(calificaciones) == 0:
         print("No hay alumnos registrados.")
@@ -35,7 +34,7 @@ def ver_calificaciones_alumno():
         if encontrado == False:
             print(f"Alumno '{nombre}' no encontrado.")
 
-# Función para ver los promedios de los alumnos
+#promedios
 def ver_promedios_alumnos():
     if len(calificaciones) == 0:
         print("No hay alumnos registrados.")
@@ -43,16 +42,16 @@ def ver_promedios_alumnos():
         print("\nPromedios de los alumnos:")
         for alumno in calificaciones:
             suma = 0
-            # Recorremos las materias para calcular el promedio sin usar .items()
+            #revisarrr
             for materia in materias:
                 suma += alumno["calificaciones"][materia]
             promedio = suma / len(materias)
             print(f"{alumno['nombre']}: {promedio:.2f}")
 
-# Función para añadir un alumno
+#alumnoo
 def anadir_alumno():
     nombre = input("Ingrese el nombre del nuevo alumno: ")  # Sin .strip()
-    # Verificar si el alumno ya existe
+    #existe?
     existe = False
     for alumno in calificaciones:
         if alumno["nombre"].lower() == nombre.lower():
@@ -73,12 +72,13 @@ def anadir_alumno():
         calificaciones.append({"nombre": nombre, "calificaciones": calificaciones_alumno})
         print(f"Alumno '{nombre}' añadido exitosamente.")
 
-# Función para eliminar un alumno
+
+"""
 def eliminar_alumno():
     if len(calificaciones) == 0:
         print("No hay alumnos registrados.")
     else:
-        nombre = input("Ingrese el nombre del alumno a eliminar: ")  # Sin .strip()
+        nombre = input("Ingrese el nombre del alumno a eliminar: ")  
         indice = -1
         for i in range(len(calificaciones)):
             if calificaciones[i]["nombre"].lower() == nombre.lower():
@@ -89,6 +89,7 @@ def eliminar_alumno():
             print(f"Alumno '{nombre}' eliminado exitosamente.")
         else:
             print(f"Alumno '{nombre}' no encontrado.")
+"""
 
 # Función para ver el promedio grupal
 def ver_promedio_grupal():
@@ -104,7 +105,7 @@ def ver_promedio_grupal():
             promedio = suma_materias[materia] / len(calificaciones)
             print(f"{materia}: {promedio:.2f}")
 
-# Bucle principal del programa
+
 opcion = -1
 while opcion != 0:
     opcion = menu()
