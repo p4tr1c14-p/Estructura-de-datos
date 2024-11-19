@@ -1,8 +1,7 @@
-print(" *** Lista de compras *** ")
-
-opcion = -1
+print(" * Lista de compras * ")
+opcion = None
 lista = []
-
+contador = 0
 def menu():
     print("Bienvenido a mi menú 😉")
     print("1) Ver lista")
@@ -17,29 +16,39 @@ while opcion != 0:
     if opcion == 1:
         if lista:
             print("Lista de compras:")
+            num = 0
             for producto in lista:
-                print(f"{producto[0]} - Cantidad: {producto[1]}")
+                print(f"{num}) {producto[0]} -- Cantidad: {producto[1]}")
+                num = num + 1
         else:
-            print("La lista está vacía.")
+            print("La lista está vacía")
         print("------------------------------")
         print()
     elif opcion == 2:
         nombre = input("Ingrese el nombre de su producto: ")
         cantidad = input("Ingrese la cantidad de productos: ")
         lista.append([nombre, cantidad])
+        contador = contador + 1
+        #print(contador)
         print("------------------------------")
         print()
     elif opcion == 3:
-        print("Lista actual de productos:")
-        for idx, producto in enumerate(lista):
-            print(f"{idx + 1}) {producto[0]} - Cantidad: {producto[1]}")
-        borrar = int(input("Ingrese el número del producto a eliminar: ")) - 1
-        if 0 <= borrar < len(lista):
-            lista.pop(borrar)
-            print("Producto eliminado correctamente.")
+        print("Lista previa...")
+        cont = 0
+        for producto in lista:
+            print(f"{cont}) {producto[0]} -- Cantidad: {producto[1]}")
+            cont = cont + 1
+        borrar = int(input("Ingrese el número del producto a eliminar: "))
+        if borrar > contador:
+            print(f"No hay {contador} productos 🧐")
+            print("------------------------------")
+            print()
         else:
-            print("Número inválido.")
-        print("------------------------------")
-        print()
+            borrar = borrar
+            lista.pop(borrar)
+            contador = contador - 1
+            #print(contador)
+            print("Producto eliminado correctamente.")
 
-print("¡Gracias por usar el programa! 😊")
+
+print("Gracias por usar el programa 😊")
