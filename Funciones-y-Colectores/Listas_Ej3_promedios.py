@@ -1,9 +1,8 @@
 print(" *** PROMEDIOS DEL PARCIAL 1 *** ")
 
-# Lista para almacenar los datos de los alumnos
 calificaciones = []
 
-# Lista de materias
+
 materias = ["ESTRUCTURA DE DATOS", "DERECHO Y LEGISLACIÓN", "CONTABILIDAD", "ELECTRÓNICA", "ÁLGEBRA"]
 
 def menu():
