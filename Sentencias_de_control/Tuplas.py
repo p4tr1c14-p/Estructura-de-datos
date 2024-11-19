@@ -5,8 +5,6 @@ print("*** Ejemplo de tuplas ***")
 
 pi_serie= (4, -4/3, 4/5, -4/7, 4/9, -4/11, 4/13, -4/15, 4/17, -4/19, 4/21, -4/23)
 
-punto1= (1,0)
-punto2= (5,3)
 
 print(f" La suma de los 3 primeros es de: {sum(pi_serie[0:2])}")
 print(f" La suma de los 5 primeros es de: {sum(pi_serie[0:4])}")
@@ -18,6 +16,11 @@ print()
 print("*** Ejemplo con coordenadas ***")
 punto1= (1,0)
 punto2= (5,3)
+
+#punto1[0]= 2
+#punto1.append(2)
+
+
 print(f"Coordenas en tuplas: {punto1}{punto2}")
 x1, y1= punto1
 x2, y2= punto2
@@ -26,7 +29,6 @@ print()
 print("---------------------------------------")
 pendiente = (y2-y1)/(x2-x1)
 b = y1 - pendiente * x1
-ecuacion = pendiente * x1
 print(f"La ecuación de la recta es: y = {pendiente}x {b}")
 
 """for i in fechas_cumple:
