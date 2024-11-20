@@ -9,7 +9,7 @@ numero = int(input("Ingrese el número final: ")) #➡️ Ingreso un número y c
 suma = 0
 ayuda = 0
 
-while ayuda <= numero: #➡️ Mientras mi contador que es ayuda no llegu hasta el número que es mi paro se seguirá haceindo la suma
+while ayuda <= numero: #➡️ Mientras mi contador que es ayuda no llegue hasta el número que es mi paro se seguirá haceindo la suma
     suma += ayuda
     ayuda += 1
 
