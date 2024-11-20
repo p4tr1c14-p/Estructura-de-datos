@@ -12,7 +12,7 @@ print(f"La suma de {numero_inicial} hasta {numero_final} es: ")
 suma = 0 #➡️ Variable donde se guardará la suma acumulativa
 
 while numero_inicial <= numero_final: #➡️ En este caso el número inicial será mi iterador
-    suma += numero_inicial
+    suma += numero_inicial #➡️ Aquí le voy sumando
     numero_inicial += 1
 
 print(suma) #➡️ Imprimir el resultado final
