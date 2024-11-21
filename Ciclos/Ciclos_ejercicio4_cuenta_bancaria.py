@@ -13,10 +13,10 @@ while opciones != 0:
     print("1) Consultar saldo.")
     print("2) Ingresar dinero.")
     print("3) Retira dinero.")
-    opciones = int(input("Ingrese su selección: ")) #➡️ Recibo la opcón elejida por el usuario y la convertieto a entero
+    opciones = int(input("Ingrese su selección: ")) #➡️ Recibo la opción elegida por el usuario y la convierto a entero
 
     if opciones == 1:
-        print(f"Su saldo es de: {saldo:.2f}") #➡️ Inprimo el salgo con dos décimales
+        print(f"Su saldo es de: {saldo:.2f}") #➡️ Imprimo el saldo con dos décimales
         print()
     elif opciones == 2:
         money = float(input("Ingrese la canidad a depositar: ")) #➡️ Convierto a décimal
@@ -29,11 +29,11 @@ while opciones != 0:
             print("Dinero insuficiente trabaje! ")
             print()
         else:
-            saldo = saldo - sacar #➡️ Le rest el dinero que se solicito retirar
+            saldo = saldo - sacar #➡️ Le resto el dinero que se solicito retirar
             print("Dinero retirado correctamente 🤑")
             print()
     elif opciones > 0:
-        print("Opción inválida") #➡️ Si la opción elejida por el usuario es mayor a cero significa que es una opción inválida
+        print("Opción inválida") #➡️ Si la opción elegida por el usuario es mayor a cero significa que es una opción inválida
         print()
     else:
         print("Saliendo...") #➡️ De lo contrario si es cero termina mi programa
