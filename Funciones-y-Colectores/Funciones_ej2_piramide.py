@@ -83,4 +83,4 @@ while opciones != 0:  #➡️ Mientras el usuario no ingrese 0, el ciclo continu
         print("Opción inválida")
         print()
 
-print("Gracias por usar mi programa 😎")  # Mensaje de despedida
+print("Gracias por usar mi programa 😎")
