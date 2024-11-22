@@ -23,7 +23,7 @@ while opciones != 0:
 
         print("Primer triángulo")
         for i in range(1, filauno + 1):
-            asteriscos1 = " * " * i
+            asteriscos1 = " * " * i #➡️Multiplico el asteristico por el i de mi for
             print(f" {asteriscos1}")
         print()
     elif opciones == 2:
@@ -34,7 +34,7 @@ while opciones != 0:
         print("Segundo triángulo")
         for x in range(1, fila + 1):
             asteriscos2 = " * " * fila
-            fila = fila - 1
+            fila = fila - 1 #➡️Reste uno a las filas para que me diera el triangulo que quería
             print(f" {asteriscos2}")
         print()
     elif opciones == 3:
