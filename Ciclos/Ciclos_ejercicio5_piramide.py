@@ -41,6 +41,18 @@ while opciones != 0:
         print("Tercer triángulo")
         fila = int(input("Ingrese el número de filas que desee: "))
         filauno = fila
+        contador = 0
+        for y in range(1, fila + 1):
+            espacio = " " * (fila - y)
+            asteriscos3 = "*" * (contador + 1)
+            contador += 2
+            print(f" {espacio}{asteriscos3}")
+            print()
+
+    elif opciones == 4:
+        print("Cuarto triángulo")
+        fila = int(input("Ingrese el número de filas que desee: "))
+        filauno = fila
         contador = fila
         for z in range(1, fila + 1):
             espacio = " " * z
@@ -55,32 +67,3 @@ while opciones != 0:
         print("Saliendo...")  # ➡️ De lo contrario si es cero termina mi programa
 
 print("Gracias por usar mi programa 😎")
-
-
-
-"""fila = int(input("Ingrese el número de filas que desee: "))
-filauno = fila
-contador = fila
-
-print("Primer triángulo")
-for i in range(1, filauno + 1) :
-    asteriscos1 = " * " * i
-    print(f" {asteriscos1}")
-
-print()
-print("Segundo triángulo")
-for x in range(1, fila + 1) :
-    asteriscos2 = " * " * fila
-    fila = fila - 1
-    print(f" {asteriscos2}")
-print()
-print()
-print()
-print("Tercer triángulo")
-for z in range(1, fila + 1) :
-    espacio = " " * z
-    asteriscos3 = "*" * contador
-    print(f" {espacio}{asteriscos3}")
-    contador -= 1
-
-"""
