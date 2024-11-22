@@ -4,6 +4,7 @@ Fecha: 29 de octubre de 2024
 Descripción: Este programa es un ejercicio sobre los ciclos while
 '''
 
+#➡️ Función para mostrar el menú
 def menu():
     print("Bienvenido al menú de triángulos 📐")
     print("0) Salir.")
@@ -14,6 +15,7 @@ def menu():
     opcion = int(input("Ingrese su selección: "))  # Recibe la opción elegida por el usuario y la convierte a entero
     return opcion
 
+#➡️ Función para el primer triángulo
 def primer_triangulo():
     fila = int(input("Ingrese el número de filas que desee: "))
     filauno = fila
@@ -21,10 +23,11 @@ def primer_triangulo():
 
     print("Primer triángulo")
     for i in range(1, filauno + 1):
-        asteriscos1 = " * " * i  # Multiplico el asterisco por el i de mi for
+        asteriscos1 = " * " * i  #➡️ Multiplico el asterisco por el i de mi for
         print(f" {asteriscos1}")
     print()
 
+#➡️ Función para el segundo triángulo
 def segundo_triangulo():
     fila = int(input("Ingrese el número de filas que desee: "))
     filauno = fila
@@ -33,10 +36,11 @@ def segundo_triangulo():
     print("Segundo triángulo")
     for x in range(1, fila + 1):
         asteriscos2 = " * " * fila
-        fila = fila - 1  # Reste uno a las filas para que me diera el triángulo que quería
+        fila = fila - 1  #➡️ Resto uno a las filas para que me diera el triángulo que quería
         print(f" {asteriscos2}")
     print()
 
+#➡️ Función para el tercer triángulo
 def tercer_triangulo():
     print("Tercer triángulo")
     fila = int(input("Ingrese el número de filas que desee: "))
@@ -49,6 +53,7 @@ def tercer_triangulo():
         print(f" {espacio}{asteriscos3}")
         print()
 
+#➡️ Función para el cuarto triángulo
 def cuarto_triangulo():
     print("Cuarto triángulo")
     fila = int(input("Ingrese el número de filas que desee: "))
@@ -58,29 +63,24 @@ def cuarto_triangulo():
         print(" " * (filauno - z) + "*" * z)
         print()
 
-def main():
-    print("*** Bienvenido a mi menú de triángulos ***")
+# ** Ciclo principal del programa **
+print("*** Bienvenido a mi menú de triángulos ***")
 
-    opciones = None  # Aplique mis nuevos conocimientos adquiridos con respecto a la inicialización de este tipo de variables que uso en mis condiciones
+opciones = None  #➡️ Inicializamos la variable de opciones
 
-    while opciones != 0:
-        opciones = menu()  # Llamada a la función menu() para obtener la opción del usuario
+while opciones != 0:  #➡️ Mientras el usuario no ingrese 0, el ciclo continuará
+    opciones = menu()  #➡️ Llamada a la función menu() para mostrar el menú y obtener la opción
 
-        if opciones == 1:
-            primer_triangulo()
-        elif opciones == 2:
-            segundo_triangulo()
-        elif opciones == 3:
-            tercer_triangulo()
-        elif opciones == 4:
-            cuarto_triangulo()
-        elif opciones > 0:
-            print("Opción inválida")  # Si la opción elegida por el usuario es mayor a cero significa que es una opción inválida
-            print()
-        else:
-            print("Saliendo...")  # De lo contrario si es cero termina mi programa
+    if opciones == 1:
+        primer_triangulo()
+    elif opciones == 2:
+        segundo_triangulo()
+    elif opciones == 3:
+        tercer_triangulo()
+    elif opciones == 4:
+        cuarto_triangulo()
+    elif opciones > 0:
+        print("Opción inválida")
+        print()
 
-    print("Gracias por usar mi programa 😎")
-
-# Llamar a la función principal para ejecutar el programa
-main()
+print("Gracias por usar mi programa 😎")  # Mensaje de despedida
