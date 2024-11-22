@@ -14,6 +14,7 @@ while opciones != 0:
     print("1) Primer triángulo.")
     print("2) Segundo triángulo.")
     print("3) Tercer triángulo.")
+    print("4) Cuarto triángulo.")
     opciones = int(input("Ingrese su selección: ")) #➡️ Recibo la opción elegida por el usuario y la convierto a entero
 
     if opciones == 1:
@@ -53,12 +54,9 @@ while opciones != 0:
         print("Cuarto triángulo")
         fila = int(input("Ingrese el número de filas que desee: "))
         filauno = fila
-        contador = fila
-        for z in range(1, fila + 1):
-            espacio = " " * z
-            asteriscos3 = "*" * contador
-            print(f" {espacio}{asteriscos3}")
-            contador -= 1
+        contador = 0
+        for z in range(1, filauno + 1):
+            print(" " * (filauno - z) + "*" * z)
             print()
     elif opciones > 0:
         print("Opción inválida")  # ➡️ Si la opción elegida por el usuario es mayor a cero significa que es una opción inválida
