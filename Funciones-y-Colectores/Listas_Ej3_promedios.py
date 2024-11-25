@@ -56,9 +56,9 @@ def anadir_alumno():
         for materia in materias:
             valido = 0
             while valido == 0:
-                cal = input(f"Ingrese la calificación de {materia}: ")
-                if cal.isdigit() and 0 <= int(cal) <= 100:
-                    calificaciones_alumno[materia] = int(cal)
+                cal = int(input(f"Ingrese la calificación de {materia}: "))
+                if 0 <= int(cal) <= 100:
+                    calificaciones_alumno[materia] = cal
                     valido = 1
                 else:
                     print("Ingrese un número válido entre 0 y 100.")
@@ -72,6 +72,7 @@ def eliminar_alumno():
     else:
         nombre = input("Ingrese el nombre del alumno a eliminar: ")
         indice = -1
+
         for i in range(len(calificaciones)):
             if calificaciones[i]["nombre"].lower() == nombre.lower():
                 indice = i
@@ -82,12 +83,12 @@ def eliminar_alumno():
         else:
             print(f"Alumno {nombre} no encontrado.")
 
-#
+
 def ver_promedio_grupal():
     if len(calificaciones) == 0:
         print("No hay alumnos registrados.")
     else:
-        suma_materias = {materia: 0 for materia in materias}
+        suma_materias = sum(materias) #🧐🧐🧐🧐
         for alumno in calificaciones:
             for materia in materias:
                 suma_materias[materia] += alumno["calificaciones"][materia]
