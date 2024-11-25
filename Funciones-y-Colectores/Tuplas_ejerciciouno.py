@@ -17,20 +17,6 @@ def menu ():
     opcion = int(input("Ingrese su selección: "))
     return opcion
 
-def mostrar ():
-    if lista:
-        print(f"La lista de números es: {lista}")
-    else:
-        print("La lista está vacía.")
-    print("------------------------------")
-    print()
-
-def agregar ():
-    nuevo_num = float(input("Ingrese el número a la lista: "))
-    lista.append(nuevo_num)
-    print("Se agrego el número correctamente 👩‍💻")
-    print()
-
 def determinar ():
     mayor = lista[0]
     for i in lista:
@@ -48,10 +34,17 @@ while usuario_opcion != 0:
     usuario_opcion = menu()
 
     if usuario_opcion == 1:
-        mostrar()
-
+        if lista:
+            print(f"La lista de números es: {lista}")
+        else:
+            print("La lista está vacía.")
+        print("------------------------------")
+        print()
     elif usuario_opcion == 2:
-        agregar()
+        nuevo_num= float(input("Ingrese el número a la lista: "))
+        lista.append(nuevo_num)
+        print("Se agrego el número correctamente 👩‍💻")
+        print()
 
     elif usuario_opcion == 3:
         if lista:
