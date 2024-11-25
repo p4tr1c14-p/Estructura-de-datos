@@ -1,13 +1,10 @@
 print(" *** PROMEDIOS DEL PARCIAL 1 *** ")
 
-# Lista para almacenar los datos de los alumnos
 calificaciones = []
-
-# Lista de materias
 materias = ["ESTRUCTURA DE DATOS", "DERECHO Y LEGISLACIÓN", "CONTABILIDAD", "ELECTRÓNICA", "ÁLGEBRA"]
 
 def menu():
-    print("\nBienvenido a mi menú 😉")
+    print("Bienvenido a mi menú 😉")
     print("1) Ver calificaciones de alumno")
     print("2) Ver promedios de alumnos")
     print("3) Añadir alumno")
@@ -81,9 +78,9 @@ def eliminar_alumno():
                 break
         if indice != -1:
             del calificaciones[indice]
-            print(f"Alumno '{nombre}' eliminado exitosamente.")
+            print(f"Alumno {nombre} eliminado exitosamente.")
         else:
-            print(f"Alumno '{nombre}' no encontrado.")
+            print(f"Alumno {nombre} no encontrado.")
 
 #
 def ver_promedio_grupal():
@@ -113,7 +110,7 @@ while opcion != 0:
         eliminar_alumno()
     elif opcion == 5:
         ver_promedio_grupal()
-    elif opcion == 0:
-        print("¡Hasta luego! 👋")
-    else:
-        print("Opción inválida. Por favor, intente nuevamente.")
+    elif opcion > 5:
+        print("Opción inválida")
+
+print("Adiós 🤓")
