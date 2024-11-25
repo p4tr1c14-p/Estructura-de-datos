@@ -5,11 +5,13 @@ materias = ["ESTRUCTURA DE DATOS", "DERECHO Y LEGISLACIÓN", "CONTABILIDAD", "EL
 
 def menu():
     print("Bienvenido a mi menú 😉")
-    print("1) Ver calificaciones de alumno")
-    print("2) Ver promedios de alumnos")
-    print("3) Añadir alumno")
-    print("4) Eliminar alumno")
-    print("5) Ver promedio grupal")
+    print("1) Ver calificaciones detalladas de un alumno")
+    print("2) Ver promedio del Parcial 1 de todos los alumnos")
+    #Aqui mostrar opciones y decidir el alumno a mostar por índices
+    print("3) Agregar alumno y sus calificaciones")
+    print("4) Eliminar alumno y sus calificaciones") #Aqui mostrar opciones y decidir el alumno a eliminar por índices
+    print("5) Ver promedio grupal del Parcial 1")
+    print("6) Ver calificaciones de todos los alumnos")
     print("0) Salir")
     opcion = int(input("Ingrese su selección: "))
     return opcion
