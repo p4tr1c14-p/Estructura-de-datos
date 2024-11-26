@@ -26,25 +26,25 @@ def mostrar ():
     print()
 
 def agregar ():
-    nuevo_num = float(input("Ingrese el número a la lista: "))
-    lista.append(nuevo_num)
+    nuevo_num = float(input("Ingrese el número a la lista: ")) #➡️ Solicité un número al usuario
+    lista.append(nuevo_num) #➡️ Aquí lo agregué con el append
     print("Se agrego el número correctamente 👩‍💻")
     print()
 
 def determinar ():
-    mayor = lista[0]
+    mayor = lista[0] #➡️ Inicialicé el mayor con el primer elemento
     for i in lista:
         if i > mayor:
             mayor = i
-    menor = lista[0]
-    for x in lista:
+    menor = lista[0] #➡️ Inicialicé el menor con el primer elemento
+    for x in lista: #➡️ Recorrí la lista para encontrar el menor
         if x < menor:
             menor = x
-    return (mayor, menor)
+    return (mayor, menor) #➡️ Retorné una tupla con el mayor y el menor
 
 lista = []
 usuario_opcion = None
-while usuario_opcion != 0:
+while usuario_opcion != 0:  #➡️ Repite mientras el usuario no elija salir
     usuario_opcion = menu()
 
     if usuario_opcion == 1:
@@ -54,9 +54,9 @@ while usuario_opcion != 0:
         agregar()
 
     elif usuario_opcion == 3:
-        if lista:
-            tupla = tuple(lista)
-            mas, menos= determinar()
+        if lista: #➡️ Verifiqué que la lista no esté vacía antes de calcular
+            tupla = tuple(lista) #➡️ Convertpi la lista a una tupla
+            mas, menos= determinar() # <➡️ Obtuve el mayor y el menor de la lista
             print(f"El número mayor: {mas} y el número menor es: {menos}")
             print()
         else:
@@ -65,4 +65,4 @@ while usuario_opcion != 0:
     elif usuario_opcion > 3:
         print("Opción inválida")
 
-print("Gracias por usar mi programa")
+print("Gracias por usar mi programa :D")
