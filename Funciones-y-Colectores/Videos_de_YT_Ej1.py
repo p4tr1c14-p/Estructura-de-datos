@@ -1,3 +1,10 @@
+'''
+Nombre: Patricia Pérez Cruz
+Fecha: 21 de noviembre de 2024
+Descripción:
+Este programa es una playlist de videos de Youtube.
+'''
+
 print(" *** Videos favoritos de YT ***")
 print()
 

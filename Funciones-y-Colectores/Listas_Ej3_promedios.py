@@ -1,3 +1,11 @@
+'''
+Nombre: Patricia Pérez Cruz
+Fecha: 21 de noviembre de 2024
+Descripción:
+Este programa es una lista de las calificaciones de los alumnos del Parcial 1.
+La lista está conformada por el nombre del alumno y sus calificaciones.
+Cada alumno tiene 5 calificaciones: estructuras de datos, derecho, contabilidad, álgebra y electrónica.
+'''
 print(" *** PROMEDIOS DEL PARCIAL 1 *** ")
 
 calificaciones = []  #➡️ Aquí guardo las calificaciones de todos los alumnos, como una lista de listas
