@@ -61,8 +61,7 @@ def ganador():
         print()
     else:
         gano = choice(lista)  # ➡️ Con mi conjunto como lista ya puedo usar choice
-        print(f"El ganador es: {gano}")
-        print("Felicidades 🤩")
+        print(f"El correo gandor es: {gano}. Muchas felicidades! 🤩")
         print("-------------------------")
         print()
 
