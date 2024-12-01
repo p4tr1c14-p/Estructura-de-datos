@@ -22,7 +22,7 @@ tema = input("Ingrese el tema del juego: ") #➡️ Solicito el tema
 continuar = 1  #➡️ Para tener el control del bucle
 
 while continuar:
-    numero = len(juego) + 1  #➡️ Para saber el número de palabra actual y +1 para que no de 0 al inicio
+    numero = len(juego) + 1  #➡️ Este es mi contador para saber el número de palabra actual y +1 para que no de 0 al inicio
     palabra = input(f"Ingrese la palabra {numero} del tema '{tema}': ").strip().lower() #➡️ Para impiar espacios al inicio
     #y final con .strip() y convierte el texto a minúsculas con .lower()
 
