@@ -38,7 +38,7 @@ print("*** Se accede al por clave-valor, para acceder a ambos 👻👻***")
 for clave, valor in diccionario_alumno.items():
     print(f"Clave: {clave} y Valor: {valor}")
     print()
-print("*** Se accede al por valor 🐹🐹***")
+print("*** Se accede al por valor 🐹***")
 for valor in diccionario_alumno.values():
     print(f"Valor: {valor}")
     print()
