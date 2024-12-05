@@ -69,6 +69,66 @@ piedra_papel_tijeras = {(PIEDRA, TIJERAS): JUGADOR,
                         (PIEDRA, SPOCK): CPU,
                         }
 
+#➡️ Variables para llevar el conteo de victorias
+vi_ju = 0
+vi_cpu = 0
+vi_empate = 0
+
+print(" ***  Juego de piedra, papel o tijeras  *** ")
+opcion = None
+while opcion != 0:
+    opcion = menu()
+    if opcion < 0 or opcion > 3: # ➡️Comprobé si la opción está fuera del rango permitido
+        print("Opción no válida. Por favor, ingrese un número entre 0 y 3.")
+        print()
+    elif opcion == 6:
+        print("""Reglas:
+        Selecciona una de las opciones de acuerdo a lo siguiente:
+        - Tijeras cortan papel.
+        - Papel cubre piedra.
+        - Piedra aplasta lagarto.
+        - Lagarto envenena Spock.
+        - Spock destruye tijeras.
+        - Tijeras decapitan lagarto.
+        - Lagarto come papel.
+        - Papel desaprueba Spock.
+        - Spock vaporiza piedra.
+        - Piedra aplasta tijeras.
+        La CPU va a elegir una de las opciones de manera aleatoria.""")
+
+    else:
+        if opcion == 0:
+            print("Gracias por jugar. ¡Hasta pronto!")
+            break
+
+        #➡️ Aquí se obtienen las elecciones del jugador y de la CPU
+
+        eleccion_usuario, eleccion_cpu = jugar(opcion)
+        print(f"\nJugador eligió: {eleccion_usuario}")
+        print(f"CPU eligió: {eleccion_cpu}")
+        print()
+        #➡️ Se determinó el resultado del juego con base en las reglas
+        resultado = piedra_papel_tijeras.get((eleccion_usuario, eleccion_cpu), EMPATE)
+
+        if resultado == JUGADOR:
+            vi_ju = vi_ju + 1
+            print("El ganador es el Jugador")
+            #➡️ Muestro los resultados acumulados
+            print(f"Victoras del jugador: {vi_ju}, Victorias del CPU: {vi_cpu}, Empates: {vi_empate}")
+            print()
+        elif resultado == CPU:
+            vi_cpu = vi_cpu + 1
+            print("El ganador es el CPU")
+            # ➡️ Muestro los resultados acumulados
+            print(f"Victoras del jugador: {vi_ju}, Victorias del CPU: {vi_cpu}, Empates: {vi_empate}")
+            print()
+        else:
+            vi_empate = vi_empate + 1
+            print("Es un empate")
+            # ➡️ Muestro los resultados acumulados
+            print(f"Victoras del jugador: {vi_ju}, Victorias del CPU: {vi_cpu}, Empates: {vi_empate}")
+            print()
+
 """
 Reglas:
 Selecciona una de las opciones de acuerdo a lo siguiente:
