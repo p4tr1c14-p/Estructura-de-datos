@@ -8,7 +8,7 @@ juego de piedra, papel y tijeras.
 
 from random import choice #➡️ Siempre importar porque si no me marca error
 
-#➡️ Estas son las constantes para representar las opciones del juego y los posibles resultados
+#➡️ Estas son las constantes para representar las opciones del juego
 PIEDRA = "Piedra"
 PAPEL = "Papel"
 TIJERAS = "Tijeras"
@@ -31,6 +31,8 @@ def menu():
     return opcion
     print()
 
+#➡️ La función jugar devuelve la elección del jugador basada en su opción del menú
+# y genera aleatoriamente la elección de la CPU
 def jugar(opcion):
     if opcion == 1:
         eleccion_usuario = PIEDRA
@@ -47,6 +49,7 @@ def jugar(opcion):
     return eleccion_usuario, eleccion_cpu
 
 #➡️ Este es mi diccionario que define las reglas del juego: las combinaciones ganadoras para el jugador o la CPU
+#➡️ Aquí ya solo agrugué las nuevas opciones que son lo del lagarto y spock
 piedra_papel_tijeras = {(PIEDRA, TIJERAS): JUGADOR,
                         (PIEDRA, PAPEL): CPU,
                         (TIJERAS, PAPEL): JUGADOR,
@@ -78,10 +81,11 @@ print(" ***  Juego de piedra, papel o tijeras  *** ")
 opcion = None
 while opcion != 0:
     opcion = menu()
-    if opcion < 0 or opcion > 3: # ➡️Comprobé si la opción está fuera del rango permitido
+    if opcion < 0 or opcion > 6: #➡️ Comprobé si la opción está fuera del rango permitido
         print("Opción no válida. Por favor, ingrese un número entre 0 y 3.")
         print()
-    elif opcion == 6:
+    elif opcion == 6: #➡️ Agregué esta opción para que el usuario conozca las reglas
+        #➡️ Además, en el print tuve que utilizar tres """ para que se imprimiera correctamente
         print("""Reglas:
         Selecciona una de las opciones de acuerdo a lo siguiente:
         - Tijeras cortan papel.
@@ -98,11 +102,10 @@ while opcion != 0:
 
     else:
         if opcion == 0:
-            print("Gracias por jugar. ¡Hasta pronto!")
+            print("Gracias por jugar. ¡Hasta pronto! 🤓")
             break
 
         #➡️ Aquí se obtienen las elecciones del jugador y de la CPU
-
         eleccion_usuario, eleccion_cpu = jugar(opcion)
         print(f"\nJugador eligió: {eleccion_usuario}")
         print(f"CPU eligió: {eleccion_cpu}")
@@ -128,19 +131,3 @@ while opcion != 0:
             # ➡️ Muestro los resultados acumulados
             print(f"Victoras del jugador: {vi_ju}, Victorias del CPU: {vi_cpu}, Empates: {vi_empate}")
             print()
-
-"""
-Reglas:
-Selecciona una de las opciones de acuerdo a lo siguiente:
-- Tijeras cortan papel.
-- Papel cubre piedra.
-- Piedra aplasta lagarto.
-- Lagarto envenena Spock.
-- Spock destruye tijeras.
-- Tijeras decapitan lagarto.
-- Lagarto come papel.
-- Papel desaprueba Spock.
-- Spock vaporiza piedra.
-- Piedra aplasta tijeras.
-La CPU va a elegir una de las opciones de manera aleatoria.
-"""
