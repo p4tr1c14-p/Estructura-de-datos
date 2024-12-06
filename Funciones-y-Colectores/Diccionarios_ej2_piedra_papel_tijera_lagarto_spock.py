@@ -118,16 +118,19 @@ while opcion != 0:
             print("El ganador es el Jugador")
             #➡️ Muestro los resultados acumulados
             print(f"Victoras del jugador: {vi_ju}, Victorias del CPU: {vi_cpu}, Empates: {vi_empate}")
+            print("-----------------------------------------------------------------")
             print()
         elif resultado == CPU:
             vi_cpu = vi_cpu + 1
             print("El ganador es el CPU")
             # ➡️ Muestro los resultados acumulados
             print(f"Victoras del jugador: {vi_ju}, Victorias del CPU: {vi_cpu}, Empates: {vi_empate}")
+            print("-----------------------------------------------------------------")
             print()
         else:
             vi_empate = vi_empate + 1
             print("Es un empate")
             # ➡️ Muestro los resultados acumulados
             print(f"Victoras del jugador: {vi_ju}, Victorias del CPU: {vi_cpu}, Empates: {vi_empate}")
+            print("-----------------------------------------------------------------")
             print()
