@@ -77,7 +77,7 @@ vi_ju = 0
 vi_cpu = 0
 vi_empate = 0
 
-print(" ***  Juego de piedra, papel o tijeras  *** ")
+print(" ***  Juego de piedra, papel, tijeras, lagarto, spock  *** ")
 opcion = None
 while opcion != 0:
     opcion = menu()
