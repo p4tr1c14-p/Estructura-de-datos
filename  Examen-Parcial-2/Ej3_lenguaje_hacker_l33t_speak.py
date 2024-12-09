@@ -129,6 +129,6 @@ while opcion != 0:
         print()
 
     else:
-        print("Opción no válida, por favor intente de nuevo.")
+        print("Opción no válida, por favor intente de nuevo")
         print("---------------------------------------------------")
         print()
