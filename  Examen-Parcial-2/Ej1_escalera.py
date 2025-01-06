@@ -34,6 +34,6 @@ while opcion != 0:
         print("_" * 1)
         for i in range(1, -opcion + 1):
             #➡️ Para los escalones descendentes puse 2 espacios entre cada uno
-            print(" " * (i * 2) + "|_")  #➡️ El espacio entre cada escalón lo multiplique por 2
+            print(" " * (i * 2) + "|_")  #➡️ El espacio entre cada escalón lo multipliqué por 2
     else:
         print("Opción inválida")  #➡️ En caso de que no se ingrese un número válido (aunque esto no debería ocurrir aquí)

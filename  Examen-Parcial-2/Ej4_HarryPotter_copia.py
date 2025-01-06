@@ -16,7 +16,7 @@ respuestas = {
     'Ravenclaw': 0
 }
 
-#➡️ En esta lista estan las preguntas y opciones
+#➡️ En esta lista están las preguntas y opciones
 preguntas = [
     ("¿Cuál de las siguientes opciones odiarías más que la gente te llamara?",
      ['Ordinario', 'Ignorante', 'Cobarde', 'Egoísta']),
