@@ -1,8 +1,8 @@
-# TODO Implementar menú
+
 def menu():
     pass
 
-# TODO
+
 
 def cadena_a_entero(cadena: str): -> int | None #devolver
 #recibir
@@ -15,7 +15,7 @@ else:
     return None
 
 
-# FIXME Revisar caso n=0
+
 
 def cadena_a_flotante(cadena):
     raise NotImplementedError("Implementar funcuión")

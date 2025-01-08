@@ -28,13 +28,13 @@ print()
 numero = int(numero)
 print(f"El número {numero} es de tipo {type(numero)}")"""
 
-"""def cadena_a_entero (cadena):
+def cadena_a_entero (cadena):
     no_guiones = cadena.count("-")
     revisar_cadena = cadena.lstrip("-")
     if revisar_cadena.isnumeric() and no_guiones in (0, 1):
         return int(cadena)
     else:
-        return None"""
+        return None
 
 def cadena_a_flotante (cadena):
     no_puntos = cadena.count(".")
