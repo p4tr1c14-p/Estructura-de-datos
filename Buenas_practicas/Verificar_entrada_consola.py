@@ -18,7 +18,7 @@ print(cadena.isalpha())
 print("cadena.isalnum()")
 print(cadena.isalnum())"""
 
-"""print()
+print()
 numero = input("Ingrese un número: ")
 
 while not numero.isnumeric():
@@ -26,7 +26,7 @@ while not numero.isnumeric():
     numero = input("Intenta nuevamente: ")
 print()
 numero = int(numero)
-print(f"El número {numero} es de tipo {type(numero)}")"""
+print(f"El número {numero} es de tipo {type(numero)}")
 
 def cadena_a_entero (cadena):
     no_guiones = cadena.count("-")
@@ -45,10 +45,11 @@ def cadena_a_flotante (cadena):
     else:
         return None
 
+#Use
 print()
+
 num_cadena = input("Ingresa Z: ")
 numero = cadena_a_flotante(num_cadena)
-
 while numero is None:
     print("Opción inválida")
     num_cadena = input("Ingresa Z: ")
