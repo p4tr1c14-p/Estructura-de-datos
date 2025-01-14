@@ -1,41 +1,72 @@
-def menu() -> int | int:
+"""
+Nombre: Patricia Pérez Cruz
+Fecha: 13 de enero de 2025
+Descripción: Función main
+
+"""
+
+def menu() -> int:
     """
     Muestra el menú del programa
     :return: La selección del usuario
     """
-    print("1. Sumar")
-    print("2. Restar")
-    print("0. Salir")
-    seleccion = int(input("Elige una opción: "))
-
-    # Verificar si la entrada es un número entero y está dentro de las opciones válidas
-    if seleccion == 0 or seleccion == 1 or seleccion == 2:
-        return seleccion
-    else:
+    seguir = True
+    while seguir:
+        print("1. Sumar")
+        print("2. Restar")
+        print("0. Salir")
+        seleccion = input("Elige una opción: ")
+        if seleccion.isnumeric():  # verificar si la entrada es un número
+            seleccion = int(seleccion)
+            if seleccion == 0 or seleccion == 1 or seleccion == 2:
+                seguir = False  # salir
+                return seleccion
         print("Por favor, ingresa una opción válida 😳")
 
-def sumar(uno, dos) -> int | int:
+def sumar(uno, dos) -> int:
     total = uno + dos
     print(total)
     print()
     return total
 
-def resta(tres, cuatro) -> int | int:
+def resta(tres, cuatro) -> int:
     resultado = tres - cuatro
     print(resultado)
     print()
     return resultado
 
-def ingresar_numero() ->int | None:
-    primer_numero = input("Ingresa un número: ")
-    segundo_numero = input("Ingresa un número: ")
-    print(f" {type(primer_numero)} y {type(segundo_numero)} ")
-opcion = None #➡️ Aplique lo que me comento sobre la variable None
+
+def ingresar_numero() -> float:
+    """
+    Solicita al usuario un número y verifica que sea válido
+    Acepta tanto enteros como flotantes
+    :return: El número válido ingresado
+    """
+    continuar = True
+    while continuar:
+        numero = input("Ingresa un número: ")
+        no_puntos = numero.count(".")
+        no_guiones = numero.count("-")
+        # Elimino el signo negativo y los puntos para verificar que lo que quede son solo números
+        revisar_cadena = numero.lstrip("-").replace(".", "")
+
+
+        if revisar_cadena.isnumeric() and no_guiones in (0, 1) and no_puntos in (0, 1):
+            continuar = False  # salir del bucle
+            return float(numero)  # devuelve flotante
+        else:
+            print("Entrada no válida. Por favor ingrese un número válido (entero o decimal) 😳")
+
+
+opcion = None  #➡️ Apliqué lo de la variable None
 while opcion != 0:
     opcion = menu()
+
     if opcion == 1:
-        numuno, numdos = ingresar_numero()
-        sumar(numuno, numdos)
-    if opcion == 2:
-        numuno, numdos = ingresar_numero()
-        resta(numuno, numdos)
+        num1 = ingresar_numero()  # Se piden los números después de seleccionar la opción
+        num2 = ingresar_numero()
+        sumar(num1, num2)
+    elif opcion == 2:
+        num1 = ingresar_numero()  # Se piden los números después de seleccionar la opción
+        num2 = ingresar_numero()
+        resta(num1, num2)
