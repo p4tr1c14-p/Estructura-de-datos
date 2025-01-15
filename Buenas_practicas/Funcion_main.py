@@ -58,15 +58,21 @@ def ingresar_numero() -> float:
             print("Entrada no válida. Por favor ingrese un número válido (entero o decimal) 😳")
 
 
-opcion = None  #➡️ Apliqué lo de la variable None
-while opcion != 0:
-    opcion = menu()
+def main() -> None:
+    opcion = None  # ➡️ Apliqué lo de la variable None
+    while opcion != 0:
+        opcion = menu()
 
-    if opcion == 1:
-        num1 = ingresar_numero()  # Se piden los números después de seleccionar la opción
-        num2 = ingresar_numero()
-        sumar(num1, num2)
-    elif opcion == 2:
-        num1 = ingresar_numero()  # Se piden los números después de seleccionar la opción
-        num2 = ingresar_numero()
-        resta(num1, num2)
+        if opcion == 1:
+            num1 = ingresar_numero()  # Se piden los números después de seleccionar la opción
+            num2 = ingresar_numero()
+            sumar(num1, num2)
+        elif opcion == 2:
+            num1 = ingresar_numero()  # Se piden los números después de seleccionar la opción
+            num2 = ingresar_numero()
+            resta(num1, num2)
+
+
+if __name__ == '__main__':
+    main()
+    #print(__main__)
