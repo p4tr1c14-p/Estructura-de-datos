@@ -64,7 +64,7 @@ def ingresar_calificaciones(**kwargs) -> None:
 def main() -> None:
     """
     Funcion principal que ejecuta el programa
-    Permite seleccionar opciones y gestionar el flujo del programa
+    Permitiendome seleccionar opciones y gestionar el flujo del programa
     """
     while True:
         opcion = menu()
@@ -76,3 +76,18 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
