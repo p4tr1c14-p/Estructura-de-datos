@@ -25,7 +25,8 @@ def jugar_ahorcado():
     letras_incorrectas = set() # Letras falladas
     partes_cuerpo = 0 # Contador de errores
 
-    print(f"\n¡Juego del Ahorcado! Categoria: {categoria}")
+    print(f"\n¡Juego del Ahorcado! Ls categoria es, tan tan tan 🤔🥁: {categoria}")
+    print()
 
     while partes_cuerpo < max_intentos:
         palabra_mostrada = ""

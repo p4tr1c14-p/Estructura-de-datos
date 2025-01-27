@@ -7,8 +7,7 @@ Descripción: Función main con ingreso dinámico de números
 def menu() -> int:
     """
     Muestra un menu de opciones al usuario y solicita una seleccion
-    Retorna:
-        int: La opcion seleccionada por el usuario (0, 1 o 2)
+    Retorna: int la opcion seleccionada por el usuario
     """
     seguir = True
     while seguir:
@@ -16,20 +15,18 @@ def menu() -> int:
         print("2. Multiplicar")
         print("0. Salir")
         seleccion = input("Elige una opcion: ")
-        if seleccion.isnumeric(): # Reviso si es un numero, para lo de la validacion
+        if seleccion.isnumeric(): #Reviso si es un numero, para lo de la validacion
             seleccion = int(seleccion)
             if seleccion in (0, 1, 2):
                 seguir = False
                 return seleccion
-        print("Por favor, ingresa una opcion valida 😳")
+        print("Por favor ingresa una opcion válida 😳")
 
 def sumar(*args) -> float:
     """
-    Realiza la suma de los numeros proporcionados
-    Parametros:
-        *args: Numeros a sumar
-    Retorna:
-        float: El resultado de la suma de los numeros
+    Realiza la suma de los numeros que em den
+    *args: Numeros a sumar
+    devuelve: float el resultado de la suma de los numeros
     """
     return sum(args)
 
@@ -37,9 +34,8 @@ def multiplicacion(*args) -> float:
     """
     Realiza la multiplicacion de los numeros proporcionados
     Parametros:
-        *args: Numeros a multiplicar
-    Retorna:
-        float: El resultado de la multiplicacion de los numeros
+    *args: Numeros a multiplicar
+    Retorna: float el resultado de la multiplicacion de los numeros
     """
     resultado = 1
     for i in args:
@@ -51,8 +47,7 @@ def ingresar_numeros() -> tuple:
     Solicita al usuario ingresar una lista de numeros dinamicamente
     Los numeros pueden ser enteros o decimales. El usuario puede finalizar
     el ingreso escribiendo 'fin'
-    Retorna:
-        tuple: Una tupla con los numeros ingresados
+    Retorna: Una tupla con los numeros ingresados
     """
     numeros = []
     contador = 1

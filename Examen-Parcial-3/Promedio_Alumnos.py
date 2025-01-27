@@ -8,8 +8,7 @@ el promedio general y muestra el resultado
 def menu() -> int:
     """
     Muestra el menu principal al usuario para elegir una opcion
-    Retorna:
-        int: La opcion seleccionada por el usuario (0 o 1)
+    Retorna: La opcion seleccionada por el usuario (0 o 1)
     """
     seguir = True
     while seguir:
@@ -22,7 +21,7 @@ def menu() -> int:
                 return seleccion
         print("Por favor, ingresa una opcion valida 😳")
 
-def ingresar_calificaciones() -> None:
+def ingresar_calificaciones(**kwargs) -> None:
     """
     Permite ingresar las materias y calificaciones de un alumno de manera dinamica
     Calcula el promedio general y muestra los resultados
@@ -31,7 +30,7 @@ def ingresar_calificaciones() -> None:
     while continuar:
         nombre = input("Ingresa el nombre del alumno (o 'fin' para terminar): ")
 
-        if nombre.lower() == 'fin': # Convierto a minusculas para que no tenga problemas a futuro
+        if nombre.lower() == 'fin': #Convierto a minusculas para que no tenga problemas a futuro
             print("Ingreso de calificaciones terminado")
             break
 
@@ -39,10 +38,8 @@ def ingresar_calificaciones() -> None:
         pasar = True
         while pasar:
             materia = input(f"Ingresa materia para el alumno {nombre} (o 'fin' para terminar): ")
-
             if materia.lower() == 'fin':
                 break
-
             si_seguir = True
             while si_seguir:
                 try:
