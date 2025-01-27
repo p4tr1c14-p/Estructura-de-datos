@@ -65,10 +65,10 @@ def jugar_ahorcado():
         letra = input("Introduce una letra: ").lower()
 
         if len(letra) != 1 or not letra.isalpha(): # Validacion del input
-            print("Por favor, introduce una letra valida")
+            print("Por favor, introduce una letra válida")
 
         if letra in letras_correctas or letra in letras_incorrectas:
-            print("Ya has intentado esa letra")
+            print("Ya has intentado esa letra 🤨")
 
         if letra in palabra:
             letras_correctas.add(letra) # Agrega la letra correcta
@@ -83,7 +83,7 @@ def jugar_ahorcado():
             print(f"¡Felicidades! Has adivinado la palabra: {palabra}")
             return
 
-    print(f"Perdiste! La palabra era: {palabra}") # Muestra la palabra si se pierde
+    print(f"Ups perdiste La palabra era: {palabra}") # Muestra la palabra si se pierde
 
 if __name__ == "__main__":
     jugar_ahorcado()

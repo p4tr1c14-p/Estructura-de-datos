@@ -19,7 +19,7 @@ def menu() -> int:
             seleccion = int(seleccion)
             if seleccion in (0, 1):
                 return seleccion
-        print("Por favor, ingresa una opcion valida 😳")
+        print("Por favor, ingresa una opcion válida 😳")
 
 def ingresar_calificaciones(**kwargs) -> None:
     """
