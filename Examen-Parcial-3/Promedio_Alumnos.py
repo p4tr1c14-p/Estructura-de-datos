@@ -5,26 +5,34 @@ Descripción: Programa que permite ingresar las materias y calificaciones de un 
 el promedio general y muestra el resultado
 """
 
-
 def menu() -> int:
+    """
+    Muestra el menu principal al usuario para elegir una opcion
+    Retorna:
+        int: La opcion seleccionada por el usuario (0 o 1)
+    """
     seguir = True
     while seguir:
         print("\n1. Ingresar materias")
         print("0. Salir")
-        seleccion = input("Elige una opción: ")
-        if seleccion.isnumeric(): #Reviso si es un número
+        seleccion = input("Elige una opcion: ")
+        if seleccion.isnumeric(): # Reviso si es un numero
             seleccion = int(seleccion)
             if seleccion in (0, 1):
                 return seleccion
-        print("Por favor, ingresa una opción válida 😳")
+        print("Por favor, ingresa una opcion valida 😳")
 
 def ingresar_calificaciones() -> None:
+    """
+    Permite ingresar las materias y calificaciones de un alumno de manera dinamica
+    Calcula el promedio general y muestra los resultados
+    """
     continuar = True
     while continuar:
         nombre = input("Ingresa el nombre del alumno (o 'fin' para terminar): ")
 
-        if nombre.lower() == 'fin': #Convierto a minusculas para que no tenga problemas a futuro
-            print("Ingreso de calificaciones terminado.")
+        if nombre.lower() == 'fin': # Convierto a minusculas para que no tenga problemas a futuro
+            print("Ingreso de calificaciones terminado")
             break
 
         materias = {}
@@ -38,16 +46,16 @@ def ingresar_calificaciones() -> None:
             si_seguir = True
             while si_seguir:
                 try:
-                    calificacion = float(input(f"Ingresa la calificación de {nombre} en {materia}: "))
+                    calificacion = float(input(f"Ingresa la calificacion de {nombre} en {materia}: "))
                     if 0 <= calificacion <= 10:
                         materias[materia] = calificacion
                         break
                     else:
-                        print("La calificación debe estar entre 0 y 10 porfi")
+                        print("La calificacion debe estar entre 0 y 10 porfi")
                 except ValueError:
-                    print("Ingresa un número válido.")
+                    print("Ingresa un numero valido")
 
-        if materias: #Con el .values solo agarro los valores y no las llaves
+        if materias: # Con el .values solo agarro los valores y no las llaves
             promedio = sum(materias.values()) / len(materias)
             print(f"\n---- {nombre} ----")
             for materia, calificacion in materias.items():
@@ -57,6 +65,10 @@ def ingresar_calificaciones() -> None:
             print(f"{nombre}: Sin materias registradas")
 
 def main() -> None:
+    """
+    Funcion principal que ejecuta el programa
+    Permite seleccionar opciones y gestionar el flujo del programa
+    """
     while True:
         opcion = menu()
 

@@ -66,7 +66,7 @@ def jugar_gato(modo_juego=None, jugador_1="X", jugador_2="O"):
             if opcion == "1" or opcion == "2":
                 break
             else:
-                print("Opción inválida. Debes ingresar 1 o 2.")
+                print("Opción invalida. Debes ingresar 1 o 2.")
         if opcion == "2":
             modo_juego = "cpu"
         else:
@@ -107,7 +107,7 @@ def jugar_gato(modo_juego=None, jugador_1="X", jugador_2="O"):
                     else:
                         break
                 else:
-                    print("Entrada no válida. Debes ingresar números del 1 al 3.")
+                    print("Entrada no válida. Debes ingresar numeros del 1 al 3.")
 
         tablero[fila][columna] = turno_jugador
 
