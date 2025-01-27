@@ -84,7 +84,7 @@ def jugar_4_en_raya(modo_juego=None, jugador_1="X", jugador_2="O"):
             if opcion == "1" or opcion == "2":
                 break
             else:
-                print("Opción inválida. Debes ingresar 1 o 2.")
+                print("Opción inválida, porfi ingresar 1 o 2.")
         if opcion == "2":
             modo_juego = "cpu"
         else:
