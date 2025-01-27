@@ -92,8 +92,8 @@ def jugar_gato(modo_juego=None, jugador_1="X", jugador_2="O"):
         else:
             while True:
                 #Pedir la fila y la columna
-                fila = input("Fila (1-3): ")
-                columna = input("Columna (1-3): ")
+                fila = input("Ingresa tu fila porfi (1-3): ")
+                columna = input("Ahora la columna (1-3): ")
 
                 #Verificar si las entradas son números y están dentro del rango
                 if fila.isdigit() and columna.isdigit():
@@ -101,13 +101,13 @@ def jugar_gato(modo_juego=None, jugador_1="X", jugador_2="O"):
                     columna = int(columna) - 1
 
                     if fila < 0 or fila > 2 or columna < 0 or columna > 2:
-                        print("¡Posición fuera de rango! Intenta de nuevo.")
+                        print("¡Posición fuera de rango! Intenta de nuevo")
                     elif tablero[fila][columna] != " ":
-                        print("¡Esa casilla ya está ocupada! Intenta de nuevo.")
+                        print("¡Esa casilla ya está ocupada! Intenta de nuevo")
                     else:
                         break
                 else:
-                    print("Entrada no válida. Debes ingresar numeros del 1 al 3.")
+                    print("Entrada no válida. Debes ingresar numeros del 1 al 3")
 
         tablero[fila][columna] = turno_jugador
 
