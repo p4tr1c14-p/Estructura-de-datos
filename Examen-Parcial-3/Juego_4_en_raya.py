@@ -90,7 +90,7 @@ def jugar_4_en_raya(modo_juego=None, jugador_1="X", jugador_2="O"):
         else:
             modo_juego = "dos_personas"
 
-    # Inicializar mi tablero vacío
+    #Hice mi tablero vacío
     tablero = [
         [" ", " ", " ", " ", " ", " ", " "],
         [" ", " ", " ", " ", " ", " ", " "],
