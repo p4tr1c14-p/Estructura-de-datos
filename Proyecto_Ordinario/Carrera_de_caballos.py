@@ -1,3 +1,15 @@
+"""
+Nombre: Patricia Pérez Cruz
+Fecha: 09 de febrero de 2025
+Descripción:
+Este juego simula una carrera de caballos utilizando una baraja española
+Cada jugador apuesta por un caballo, y el avance de cada uno se determina extrayendo cartas de la baraja
+Dependiendo del valor o palo de la carta, un caballo avanzará o se quedará atrás
+El primer caballo en llegar a la meta gana la partida
+"""
+
+
+
 import random
 
 cartas_horizontales = [
