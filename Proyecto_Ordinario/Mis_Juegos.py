@@ -3,11 +3,10 @@ import Gato_Juego
 import Cuatro_en_raya
 import Carrera_de_caballos
 import Batalla_Naval
-
+import Letrero
 
 def mostrar_menu():
     while True:
-        print("\n𝓔𝓵𝓲𝓳𝓮 𝓾𝓷𝓸 𝓭𝓮 𝓶𝓲𝓼 𝓳𝓾𝓮𝓰𝓸𝓼 🎳")
         print("1. Ahorcado")
         print("2. Juego del Gato")
         print("3. 4 en Raya")
@@ -34,11 +33,11 @@ def mostrar_menu():
                 break
             elif eleccion == 4:
                 print("Iniciando Juego de caballos...")
-                Cuatro_en_raya.jugar_4_en_raya()
+                Carrera_de_caballos.jugar()
                 break
             elif eleccion == 5:
-                print("Iniciando 4 en Raya...")
-                Cuatro_en_raya.jugar_4_en_raya()
+                print("Iniciando Batalla Naval...")
+                Batalla_Naval.jugar_batalla()
                 break
             elif eleccion == 0:
                 print("¡Hasta luego!")
@@ -50,4 +49,5 @@ def mostrar_menu():
 
 
 if __name__ == "__main__":
+    Letrero.mostrar_mensaje("~~ JUEGOS ~~")
     mostrar_menu()

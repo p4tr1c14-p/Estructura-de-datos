@@ -309,14 +309,14 @@ def volver_a_jugar(modo, barcos_jugador1=None, barcos_jugador2=None):
         print("2. No (Salir)")
         opcion = input("Selecciona una opción (1 o 2): ")
         if opcion == '1':
-            jugar()
+            jugar_batalla()
         elif opcion == '2':
             print("🎮🎮Gracias por jugar🎮🎮. ¡Hasta la próxima!")
             return  # Aquí se termina la ejecución del programa de manera sencilla.
         else:
             print("Opción inválida❌. Ingresa 1 o 2.")
 
-def jugar():
+def jugar_batalla():
     print("Bienvenido a Batalla Naval")
     print("1. 🎮🎮Jugar contra la PC🎮🎮")
     print("2. 🙍‍♂️🙍‍♂️Jugar contra otro jugador🙍‍♂️🙍‍♂️")
@@ -330,5 +330,5 @@ def jugar():
         else:
             print("Opción inválida❌. Ingresa 1 o 2.")
 
-
-jugar()
+if __name__ == '__main__':
+    jugar_batalla()
