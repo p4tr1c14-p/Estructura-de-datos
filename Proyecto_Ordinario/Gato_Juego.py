@@ -1,23 +1,35 @@
 """
 Nombre: Patricia Pérez Cruz
 Fecha: 25 de enero de 2025
-Descripción: Implementación del juego del "Gato"
-Dos jugadores toman turnos para alinear tres marcas consecutivas en una fila, columna o diagonal
+Descripción: Implementación del juego del "Gato". Dos jugadores toman turnos para alinear
+tres marcas consecutivas en una fila, columna o diagonal.
 """
 
 import random
 
 def imprimir_tablero(tablero):
-    """Muestra el estado actual del tablero en la consola"""
+    """
+    Muestra el estado actual del tablero en la consola.
+
+    :param tablero: El estado actual del tablero, una lista de listas 3x3.
+    :return: None. Imprime el tablero en la consola.
+    """
     for i in range(3):
         fila = tablero[i][0] + " | " + tablero[i][1] + " | " + tablero[i][2]
         print(fila)
-        if i < 2:  #Imprime una línea divisoria después de cada fila excepto la última
-            print("---" * 5)  #Línea divisoria entre filas
+        if i < 2:  # Imprime una línea divisoria después de cada fila excepto la última
+            print("---" * 5)  # Línea divisoria entre filas
     print("\n")
 
 def validar_entrada(tablero, fila, columna):
-    """Verifica si la casilla seleccionada está vacía y dentro del rango permitido"""
+    """
+    Verifica si la casilla seleccionada está vacía y dentro del rango permitido.
+
+    :param tablero: El estado actual del tablero.
+    :param fila: Fila seleccionada por el jugador (índice 0-2).
+    :param columna: Columna seleccionada por el jugador (índice 0-2).
+    :return: True si la casilla está vacía y dentro del rango, False en caso contrario.
+    """
     if fila < 0 or fila > 2 or columna < 0 or columna > 2:
         print("Posición fuera de rango! Intenta de nuevo")
         return False
@@ -27,22 +39,33 @@ def validar_entrada(tablero, fila, columna):
     return True
 
 def verificar_ganador(tablero, jugador):
-    """Comprueba si el jugador ha ganado verificando filas, columnas y diagonales"""
-    #Verificar filas y columnas
+    """
+    Comprueba si el jugador ha ganado verificando filas, columnas y diagonales.
+
+    :param tablero: El estado actual del tablero.
+    :param jugador: El jugador actual (X o O).
+    :return: True si el jugador ha ganado, False en caso contrario.
+    """
+    # Verificar filas y columnas
     for i in range(3):
         if tablero[i][0] == tablero[i][1] == tablero[i][2] == jugador:
-            return True  #Gana por fila
+            return True  # Gana por fila
         if tablero[0][i] == tablero[1][i] == tablero[2][i] == jugador:
-            return True  #Gana por columna
+            return True  # Gana por columna
 
-    #Verificar diagonales
+    # Verificar diagonales
     if tablero[0][0] == tablero[1][1] == tablero[2][2] == jugador or tablero[0][2] == tablero[1][1] == tablero[2][0] == jugador:
-        return True  #Gana por diagonal
+        return True  # Gana por diagonal
 
     return False
 
 def obtener_jugada_cpu(tablero):
-    """Genera una jugada aleatoria para la CPU en una casilla vacía"""
+    """
+    Genera una jugada aleatoria para la CPU en una casilla vacía.
+
+    :param tablero: El estado actual del tablero.
+    :return: Una tupla con las coordenadas (fila, columna) de la jugada de la CPU.
+    """
     while True:
         fila = random.randint(0, 2)
         columna = random.randint(0, 2)
@@ -50,8 +73,15 @@ def obtener_jugada_cpu(tablero):
             return fila, columna
 
 def jugar_gato(modo_juego=None, jugador_1="X", jugador_2="O"):
-    """Ejecuta el juego del gato en modo de dos jugadores o contra la CPU"""
-    #Selección de modo de juego
+    """
+    Ejecuta el juego del gato en modo de dos jugadores o contra la CPU.
+
+    :param modo_juego: El modo de juego, puede ser 'cpu' (contra CPU) o 'dos_personas' (dos jugadores).
+    :param jugador_1: El marcador del jugador 1 (por defecto "X").
+    :param jugador_2: El marcador del jugador 2 o la CPU (por defecto "O").
+    :return: None. Imprime el resultado del juego (ganador o empate) y termina la ejecución.
+    """
+    # Selección de modo de juego
     if modo_juego is None:
         while True:
             opcion = input("Elige modo (1: Dos personas, 2: Contra CPU): ").strip()
@@ -60,14 +90,14 @@ def jugar_gato(modo_juego=None, jugador_1="X", jugador_2="O"):
             print("Opción inválida. Debes ingresar 1 o 2.")
         modo_juego = "cpu" if opcion == "2" else "dos_personas"
 
-    #Inicializar tablero
+    # Inicializar tablero
     tablero = [[" " for _ in range(3)] for _ in range(3)]
     turno_jugador = jugador_1
 
     while True:
         imprimir_tablero(tablero)
 
-        #Turno de la CPU
+        # Turno de la CPU
         if modo_juego == "cpu" and turno_jugador == jugador_2:
             fila, columna = obtener_jugada_cpu(tablero)
             print(f"Fila de la CPU: {fila+1} | Columna de la CPU: {columna+1}")
@@ -81,22 +111,22 @@ def jugar_gato(modo_juego=None, jugador_1="X", jugador_2="O"):
                         break
                 print("Entrada no válida. Intenta de nuevo")
 
-        #Colocar la jugada en el tablero
+        # Colocar la jugada en el tablero
         tablero[fila][columna] = turno_jugador
 
-        #Verificar si hay un ganador
+        # Verificar si hay un ganador
         if verificar_ganador(tablero, turno_jugador):
             imprimir_tablero(tablero)
             print(f"¡El jugador {turno_jugador} ha ganado!")
             break
 
-        #Verificar empate
+        # Verificar empate
         if all(tablero[i][j] != " " for i in range(3) for j in range(3)):
             imprimir_tablero(tablero)
             print("Es un empate.")
             break
 
-        #Cambiar turno
+        # Cambiar turno
         turno_jugador = jugador_2 if turno_jugador == jugador_1 else jugador_1
 
 if __name__ == "__main__":
