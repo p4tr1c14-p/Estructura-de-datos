@@ -9,8 +9,12 @@ import random
 def jugar_ahorcado():
     """
     Implementa el juego del ahorcado donde los jugadores deben adivinar una palabra
-    antes de agotar sus intentos. Las palabras se agrupan por categorias, y el
-    jugador tiene 6 intentos antes de perder
+    antes de agotar sus intentos. Las palabras se agrupan por categorías, y el jugador
+    tiene 6 intentos antes de perder. La función selecciona aleatoriamente una categoría
+    y una palabra de esa categoría para que el jugador intente adivinarla.
+
+    :return: None. Si el jugador adivina la palabra, el juego finaliza con un mensaje de éxito.
+             Si el jugador agota los intentos, se muestra un mensaje de derrota.
     """
     palabras = {
         "Frutas 🍉": ["manzana", "platano", "uva", "kiwi", "cereza"],
@@ -25,7 +29,7 @@ def jugar_ahorcado():
     letras_incorrectas = set() #Letras falladas
     partes_cuerpo = 0 #Contador de errores
 
-    print(f"\n¡Juego del Ahorcado! Ls categoria es, tan tan tan 🤔🥁: {categoria}")
+    print(f"\n¡Juego del Ahorcado! La categoría es: {categoria}")
     print()
 
     while partes_cuerpo < max_intentos:
@@ -38,7 +42,7 @@ def jugar_ahorcado():
 
         print(f"\n{palabra_mostrada}") #Muestra la palabra con guiones bajos y letras adivinadas
 
-        #Dibujo del ahorcado segun los errores cometidos
+        #Dibujo del ahorcado según los errores cometidos
         if partes_cuerpo == 0:
             print("  ------\n   |    |\n   |    \n   |    \n   |    \n   |    \n  ---")
         elif partes_cuerpo == 1:
@@ -64,7 +68,7 @@ def jugar_ahorcado():
         #Solicita al jugador ingresar una letra
         letra = input("Introduce una letra: ").lower()
 
-        if len(letra) != 1 or not letra.isalpha(): #Validacion del input
+        if len(letra) != 1 or not letra.isalpha(): #Validación del input
             print("Por favor, introduce una letra válida")
 
         if letra in letras_correctas or letra in letras_incorrectas:
@@ -72,18 +76,18 @@ def jugar_ahorcado():
 
         if letra in palabra:
             letras_correctas.add(letra) #Agrega la letra correcta
-            print("Letra correcta!")
+            print("¡Letra correcta!")
         else:
             letras_incorrectas.add(letra) #Agrega la letra incorrecta
             partes_cuerpo = partes_cuerpo + 1
-            print("Letra incorrecta")
+            print("¡Letra incorrecta!")
 
         #Verifica si todas las letras han sido adivinadas
         if set(palabra) <= letras_correctas:
             print(f"¡Felicidades! Has adivinado la palabra: {palabra}")
             return
 
-    print(f"Ups perdiste La palabra era: {palabra}") #Muestra la palabra si se pierde
+    print(f"Ups, perdiste. La palabra era: {palabra}") #Muestra la palabra si se pierde
 
 if __name__ == "__main__":
     jugar_ahorcado()
