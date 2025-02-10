@@ -13,7 +13,7 @@ El clásico juego del ahorcado donde el jugador debe adivinar la palabra oculta,
 las letras una por una
 
 ### 2. **Gato_Juego**
-El juego de "Gato", donde dos jugadores se turnan para marcar casillas en una cuadrícula 
+El juego de "Gato" donde dos jugadores se turnan para marcar casillas en una cuadrícula 
 con el objetivo de formar una línea o diagonal de tres símbolos (X o O)
 
 ### 3. **Cuatro_en_raya**
