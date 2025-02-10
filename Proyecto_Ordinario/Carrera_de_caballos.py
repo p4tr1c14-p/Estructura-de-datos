@@ -7,7 +7,6 @@ Cada jugador apuesta por un caballo, y el avance de cada uno se determina extray
 Dependiendo del valor o palo de la carta, un caballo avanzará o se quedará atrás
 El primer caballo en llegar a la meta gana la partida
 """
-
 import random
 
 #Lista de cartas que pueden hacer retroceder a los caballos
@@ -30,19 +29,21 @@ meta = 6
 siguiente_limite = 1
 
 
-def carta_payaso():
+def carta_payaso() -> str:
     """
     Selecciona aleatoriamente una carta de la lista de cartas que hacen retroceder
     a los caballos y la muestra en pantalla
+    :return: La carta de retroceso seleccionada
     """
     payaso = random.choice(cartas_horizontales)
     print(f"\n¡La carta {payaso} se ha volteado! 🤡\n")
     return payaso
 
 
-def sacar_carta():
+def sacar_carta() -> str:
     """
-    Extrae una carta aleatoria del mazo, la elimina de la lista y la muestra en pantalla
+    Extrae una carta aleatoria del mazo, la elimina de la lista y la muestra en pantalla.
+    :return: La carta extraída del mazo
     """
     carta = random.choice(mazo_cartas)
     mazo_cartas.remove(carta)
@@ -50,9 +51,15 @@ def sacar_carta():
     return carta
 
 
-def contar_cartas(carta, oro, espadas, copas, bastos):
+def contar_cartas(carta: str, oro: int, espadas: int, copas: int, bastos: int) -> tuple:
     """
     Aumenta el contador del palo correspondiente según la carta extraída
+    :param carta: Carta extraída del mazo
+    :param oro: Contador de cartas de Oros
+    :param espadas: Contador de cartas de Espadas
+    :param copas: Contador de cartas de Copas
+    :param bastos: Contador de cartas de Bastos
+    :return: Tupla con los nuevos valores de los contadores
     """
     if "Oros" in carta:
         oro += 1
@@ -65,10 +72,16 @@ def contar_cartas(carta, oro, espadas, copas, bastos):
     return oro, espadas, copas, bastos
 
 
-def retroceder_caballo(payaso, oro, espadas, copas, bastos):
+def retroceder_caballo(payaso: str, oro: int, espadas: int, copas: int, bastos: int) -> tuple:
     """
     Disminuye el contador del palo correspondiente si la carta seleccionada
     pertenece a una de retroceso
+    :param payaso: Carta de retroceso seleccionada
+    :param oro: Contador de cartas de Oros
+    :param espadas: Contador de cartas de Espadas
+    :param copas: Contador de cartas de Copas
+    :param bastos: Contador de cartas de Bastos
+    :return: Tupla con los nuevos valores de los contadores
     """
     if "Oros" in payaso and oro > 0:
         oro -= 1
@@ -81,9 +94,13 @@ def retroceder_caballo(payaso, oro, espadas, copas, bastos):
     return oro, espadas, copas, bastos
 
 
-def mostrar_tablero(oro, espadas, copas, bastos):
+def mostrar_tablero(oro: int, espadas: int, copas: int, bastos: int) -> None:
     """
     Muestra el estado actual de la carrera con la posición de los caballos en pantalla
+    :param oro: Contador de cartas de Oros
+    :param espadas: Contador de cartas de Espadas
+    :param copas: Contador de cartas de Copas
+    :param bastos: Contador de cartas de Bastos
     """
     print("-------------------------------🏁🏁🏁🚩")
     nombres = ["Espadas", "Oros", "Copas", "Bastos"]
@@ -96,7 +113,7 @@ def mostrar_tablero(oro, espadas, copas, bastos):
     print("-------------------------------🏁🏁🏁🚩")
 
 
-def jugar():
+def jugar() -> None:
     """
     Función principal que controla la mecánica del juego, gestionando
     la extracción de cartas, el avance y retroceso de los caballos,
@@ -114,17 +131,14 @@ def jugar():
         elif opcion == '5':
             carta = sacar_carta()
             oro, espadas, copas, bastos = contar_cartas(carta, oro, espadas, copas, bastos)
-            print(f"\n🌷 Contadores actuales: Oros={oro}, Espadas={espadas}, Copas={copas}, Bastos={bastos}\n")
             mostrar_tablero(oro, espadas, copas, bastos)
 
-            #Si todos los caballos han alcanzado el límite, se saca una carta de retroceso
             if min(oro, espadas, copas, bastos) >= limite_actual:
                 payaso = carta_payaso()
                 oro, espadas, copas, bastos = retroceder_caballo(payaso, oro, espadas, copas, bastos)
                 limite_actual += 1
                 mostrar_tablero(oro, espadas, copas, bastos)
 
-            #Verifica si un caballo ha llegado a la meta
             if oro >= meta:
                 ganador = "Oros"
             elif espadas >= meta:
