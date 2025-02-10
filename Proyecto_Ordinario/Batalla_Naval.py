@@ -9,42 +9,41 @@ registra los disparos realizados al enemigo. El objetivo es hundir todos los bar
 él hunda los tuyos
 """
 
-
 import random
 
+# Variables de puntuación inicial
 victorias_jugador = 0
 derrotas_jugador = 0
 victorias_jugador2 = 0
 derrotas_jugador2 = 0
 victorias_cpu = 0
 derrotas_cpu = 0
-#Estos son mks diccionarios.
+
+# Diccionarios de coordenadas de letras
 letras_columnas = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E'}
 
 
 def convertir_coordenadas(barcos):
     return [(fila, letras_columnas[columna]) for fila, columna in barcos]
-
 """
-Crea un tablero vacío de 5x5 con símbolos '~', que representan el agua.
+    Convierte las coordenadas numéricas de los barcos a coordenadas con letras.
 
-Returns:
- Tablero 5x5 con todas las celdas inicializadas en '~'.
-"""
+    Args:
+    barcos: Lista de tuplas con las coordenadas numéricas (fila, columna).
+
+    Returns:
+    Lista de tuplas con coordenadas (fila, letra).
+    """
+
 
 def crear_tablero():
     return [['~' for _ in range(5)] for _ in range(5)]
-
 """
-Muestra el tablero en consola. Puede ocultar los barcos si así se solicita.
+    Crea un tablero de juego de 5x5 con el  agua asi: ('~').
 
-Args:
-    tablero: Matriz 5x5 que representa el tablero.
-    ocultar: Si es 1, oculta los barcos ('⛵') y los muestra como agua ('~').
-
-Returns:
-    None: Solo imprime el tablero en consola.
-"""
+    Returns:
+    Lista de listas representando el tablero de juego.
+    """
 
 def mostrar_tablero(tablero, ocultar):
     print("  A B C D E")
@@ -59,11 +58,12 @@ def mostrar_tablero(tablero, ocultar):
         print()
         fila_numero += 1
 """
-Solicita al jugador la cantidad de barcos a colocar (de 1 a 5) y asegura que la entrada sea válida.
+    Muestra el tablero en la consola.
 
-Returns:
-La cantidad de barcos que el jugador desea colocar (entre 1 y 5).
-"""
+    Args:
+    tablero: Matriz de 5x5 que representa el tablero.
+    ocultar: Indica si los barcos deben mostrarse (0) o no (1).
+    """
 
 def obtener_cantidad_barcos():
     cantidad = 0
@@ -72,19 +72,16 @@ def obtener_cantidad_barcos():
         if entrada.isdigit():
             cantidad = int(entrada)
         if cantidad < 1 or cantidad > 5:
-            print("Opción inválida. Ingresa un número entre 1 y 5,por favor.")
+            print("Opción inválida. Ingresa un número entre 1 y 5, por favor.")
     return cantidad
-
 """
-Coloca los barcos en el tablero en posiciones aleatorias.
+       Solicita al usuario la cantidad de barcos a colocar.
 
-Args:
-tablero: El tablero en el que se colocarán los barcos.
-cantidad: La cantidad de barcos a colocar en el tablero.
+       Returns:
+       Entero entre 1 y 5 representando la cantidad de barcos.
+       """
 
-Returns:
-Lista de coordenadas (fila, columna) donde los barcos fueron colocados.
-"""
+
 
 def colocar_barcos(tablero, cantidad):
     barcos = []
@@ -95,11 +92,16 @@ def colocar_barcos(tablero, cantidad):
             barcos.append((fila, columna))
     return barcos
 """
-Solicita al jugador que ingrese un número de fila válido (de 0 a 4).
+   Coloca barcos aleatoriamente en el tablero.
 
-Returns:
-El número de fila elegido por el jugador.
-"""
+   Args:
+   tablero: Matriz de 5x5 representando el tablero de juego.
+   cantidad: Cantidad de barcos a colocar.
+
+   Returns:
+   Lista de coordenadas donde se colocaron los barcos.
+   """
+
 
 def obtener_fila():
     numero = -1
@@ -108,56 +110,50 @@ def obtener_fila():
         if entrada.isdigit():
             numero = int(entrada)
         if numero < 0 or numero > 4:
-            print("Opción inválida❌❌. Ingresa un número entre 0 y 4,por favor.")
+            print("Opción inválida. Ingresa un número entre 0 y 4, por favor.")
     return numero
-
 """
-Solicita al jugador que ingrese una letra correspondiente a una columna válida (de A a E).
+    Solicita al usuario una fila válida entre 0 y 4.
 
-Returns:
-El número de columna correspondiente a la letra ingresada (0 para A, 1 para B, etc.).
-"""
+    Returns:
+    Entero representando la fila seleccionada.
+    """
 
 def obtener_columna():
     letras = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4}
     columna = None
     while columna is None:
-        entrada = input("Ingresa la  columna de: (A-E): ").lower()  # Convertimos a minúsculas
+        entrada = input("Ingresa la columna de: (A-E): ").lower()
         if entrada in letras:
             columna = letras[entrada]
         else:
-            print("Opción inválida❌❌. Ingresa una letra entre A y E,por favor.")
+            print("Opción inválida. Ingresa una letra entre A y E, por favor.")
     return columna
-
 """
-Muestra el tablero con los barcos colocados en sus posiciones correspondientes.
+   Solicita al usuario una columna válida entre A y E.
 
-Args:
-    tablero: Matriz 5x5 que representa el tablero.
-    barcos: Lista de coordenadas (fila, columna) de los barcos.
-
-Returns:
-    None: Solo imprime el tablero con los barcos en consola.
-"""
+   Returns:
+   Entero representando la columna seleccionada.
+   """
 
 def mostrar_tablero_con_barcos(tablero, barcos):
-    """
-    Muestra el tablero y coloca los barcos en sus posiciones
-    utilizando el emoji ⛵.
-    """
     for fila, columna in barcos:
         tablero[fila][columna] = '⛵'
+    mostrar_tablero(tablero, ocultar=0)
 
-    mostrar_tablero(tablero, ocultar=0)  # Mostrar el tablero completo (sin ocultar)
-"""
-Lleva a cabo una partida contra la CPU. El jugador trata de adivinar la ubicación de los barcos enemigos.
 
-Returns:
-    None: Controla el flujo principal del juego contra la CPU.
-"""
+def actualizar_resultados(victorias_jugador, derrotas_jugador, victorias_cpu, derrotas_cpu, resultado):
+    if resultado == 'jugador':
+        victorias_jugador += 1
+    elif resultado == 'cpu':
+        victorias_cpu += 1
+    else:
+        derrotas_jugador += 1
+        derrotas_cpu += 1
+    return victorias_jugador, derrotas_jugador, victorias_cpu, derrotas_cpu
+
 
 def jugar_contra_pc():
-    global victorias_jugador, derrotas_jugador, victorias_cpu, derrotas_cpu
     print("Modo: Contra la PC")
     tablero_jugador = crear_tablero()
     tablero_cpu = crear_tablero()
@@ -165,12 +161,9 @@ def jugar_contra_pc():
     barcos_cpu = colocar_barcos(tablero_cpu, num_barcos)
     intentos = 5
     barcos_restantes = num_barcos
-    print("")
-    print("╏╠══[𝍖𝍖𝍖 𝚂𝚎 𝚑𝚊𝚗 𝚊ñ𝚊𝚍𝚒𝚍𝚘 𝚌𝚘𝚛𝚛𝚎𝚌𝚝𝚊𝚖𝚎𝚗𝚝𝚎 𝚝𝚞𝚜 𝚋𝚊𝚛𝚌𝚘𝚜 𝍖𝍖𝍖]      💦")
-    print(" ")
-    print("--------------------------------------------------------------------")
-    print("¡Es momento de adivinar los barcos enemigos!")
-    print("--------------------------------------------------------------------")
+
+    print("\n¡Es momento de adivinar los barcos enemigos!")
+
     while intentos > 0 and barcos_restantes > 0:
         print("\nTu tablero:")
         mostrar_tablero(tablero_jugador, 1)
@@ -179,7 +172,7 @@ def jugar_contra_pc():
         columna = obtener_columna()
 
         if tablero_jugador[fila][columna] != '~':
-            print("Ya disparaste aquí. Intenta otra vez,por favor.")
+            print("Ya disparaste aquí. Intenta otra vez, por favor.")
         else:
             if (fila, columna) in barcos_cpu:
                 print("¡Tocado y hundido!")
@@ -191,27 +184,21 @@ def jugar_contra_pc():
             intentos -= 1
 
     if barcos_restantes > 0:
-        print("¡Perdisteeee😞! Los barcos estaban en:", convertir_coordenadas(barcos_cpu))
-        derrotas_jugador += 1
-        victorias_cpu += 1
+        print("¡Perdiste! Los barcos estaban en:", convertir_coordenadas(barcos_cpu))
+        print("🏆🏆 Ganador: CPU 🏆🏆")
     else:
-        print("¡Ganasteeee😞! Hundiste todos los barcos.")
-        victorias_jugador += 1
-        derrotas_cpu += 1
+        print("¡Ganaste! Hundiste todos los barcos.")
+        print("🏆🏆 Ganador: Jugador 🏆🏆")
 
-    print("\nAquí están las posiciones finales de los barcos⛵:")
-    mostrar_tablero_con_barcos(tablero_cpu, barcos_cpu)  # Mostrar tablero con los barcos
-    volver_a_jugar("pc", barcos_cpu)
+    print("\nAquí están las posiciones finales de los barcos:")
+    mostrar_tablero_con_barcos(tablero_cpu, barcos_cpu)
+    volver_a_jugar("pc")
 
-"""
-Lleva a cabo una partida entre dos jugadores. Ambos intentan hundir los barcos del otro.
 
-Returns:
-    None: Controla el flujo principal del juego entre dos jugadores.
-"""
 def jugar_contra_jugador():
-    global victorias_jugador, derrotas_jugador, victorias_jugador2, derrotas_jugador2
-    print("Estas en el modo: Contra otro jugador🤩")
+    puntajes = {"victorias_j1": 0, "derrotas_j1": 0, "victorias_j2": 0, "derrotas_j2": 0}
+
+    print("Modo: Contra otro jugador")
     tablero_jugador1 = crear_tablero()
     tablero_jugador2 = crear_tablero()
     num_barcos = obtener_cantidad_barcos()
@@ -220,15 +207,11 @@ def jugar_contra_jugador():
     intentos = 5
     barcos_restantes_j1 = num_barcos
     barcos_restantes_j2 = num_barcos
-    print("╏╠══[𝍖𝍖𝍖 𝚂𝚎 𝚑𝚊𝚗 𝚊ñ𝚊𝚍𝚒𝚍𝚘 𝚌𝚘𝚛𝚛𝚎𝚌𝚝𝚊𝚖𝚎𝚗𝚝𝚎 𝚝𝚞𝚜 𝚋𝚊𝚛𝚌𝚘𝚜 𝍖𝍖𝍖]      ⛵")
-    print(" ")
-    print("--------------------------------------------------------------------")
-    print("¡Es momento de adivinar los barcos⛵ enemigos❌!")
-    print("--------------------------------------------------------------------")
+
+    print("\n¡Es momento de adivinar los barcos enemigos!")
 
     while intentos > 0 and (barcos_restantes_j1 > 0 and barcos_restantes_j2 > 0):
-        # Turno del Jugador 1
-        print("\nTurno del Jugador 1️⃣:")
+        print("\nTurno del Jugador 1:")
         mostrar_tablero(tablero_jugador2, 1)
 
         fila = obtener_fila()
@@ -243,16 +226,13 @@ def jugar_contra_jugador():
                 print("Aguaaaaa!")
                 tablero_jugador2[fila][columna] = 'X'
         else:
-            print("Ya disparaste🔫🔫 aquí.")
+            print("Ya disparaste aquí.")
 
         if barcos_restantes_j2 == 0:
-            print("¡Ganaste, Jugador 1! Hundiste todos los barcos del Jugador 2.")
-            victorias_jugador += 1
-            derrotas_jugador2 += 1
+            print("🏆🏆 Ganador: Jugador 1 🏆🏆")
             break
 
-        # Turno del Jugador 2
-        print("\nTurno del Jugador 2️⃣:")
+        print("\nTurno del Jugador 2:")
         mostrar_tablero(tablero_jugador1, 1)
 
         fila = obtener_fila()
@@ -267,41 +247,28 @@ def jugar_contra_jugador():
                 print("Aguaaaaa!")
                 tablero_jugador1[fila][columna] = 'X'
         else:
-            print("Ya disparaste🔫🔫 aquí.")
+            print("Ya disparaste aquí.")
 
         if barcos_restantes_j1 == 0:
-            print("¡Ganaste, Jugador 2! Hundiste todos los barcos del Jugador 1.")
-            victorias_jugador2 += 1
-            derrotas_jugador += 1
+            print("🏆🏆 Ganador: Jugador 2 🏆🏆")
             break
 
         intentos -= 1
 
-    print("\n⛵⛵⛵Aquí están las posiciones finales de los barcos⛵⛵⛵:")
-    # Mostrar los barcos en sus posiciones finales para ambos jugadores
-    print("\nTablero final del Jugador 1:")
+    print("\nAquí están las posiciones finales de los barcos:")
+
+    print("\nLos barcos del Jugador 1 estaban en:", convertir_coordenadas(barcos_jugador1))
+    print("Tablero final del Jugador 1:")
     mostrar_tablero_con_barcos(tablero_jugador1, barcos_jugador1)
-    print("\nTablero final del Jugador 2:")
+
+    print("\nLos barcos del Jugador 2 estaban en:", convertir_coordenadas(barcos_jugador2))
+    print("Tablero final del Jugador 2:")
     mostrar_tablero_con_barcos(tablero_jugador2, barcos_jugador2)
 
-    volver_a_jugar("jugadores", barcos_jugador1, barcos_jugador2)
+    volver_a_jugar("jugadores")  # Llamar al menú de volver a jugar
 
 
-def volver_a_jugar(modo, barcos_jugador1=None, barcos_jugador2=None):
-    if modo == "pc":
-        print("\n📊📊Estadísticas📊📊:")
-        print(f"Jugador - Victorias: {victorias_jugador}, Derrotas: {derrotas_jugador}")
-        print(f"CPU - Victorias: {victorias_cpu}, Derrotas: {derrotas_cpu}")
-    else:
-        print("\n📊📊Estadísticas📊📊:")
-        print(f"Jugador 1 - Victorias: {victorias_jugador}, Derrotas: {derrotas_jugador}")
-        print(f"Jugador 2 - Victorias: {victorias_jugador2}, Derrotas: {derrotas_jugador2}")
-
-        # Mostrar coordenadas de los barcos al final del juego
-        print("\n🛳️🛳️Coordenadas de los barcos🛳️🛳️:")
-        print(f"Jugador 1: {convertir_coordenadas(barcos_jugador1)}")
-        print(f"Jugador 2: {convertir_coordenadas(barcos_jugador2)}")
-
+def volver_a_jugar(modo):
     opcion = ""
     while opcion != '1' and opcion != '2':
         print("\n¿🎮🎮Quieres volver a jugar🎮🎮?")
@@ -309,26 +276,26 @@ def volver_a_jugar(modo, barcos_jugador1=None, barcos_jugador2=None):
         print("2. No (Salir)")
         opcion = input("Selecciona una opción (1 o 2): ")
         if opcion == '1':
-            jugar_batalla()
+            jugar()
         elif opcion == '2':
             print("🎮🎮Gracias por jugar🎮🎮. ¡Hasta la próxima!")
-            return  # Aquí se termina la ejecución del programa de manera sencilla.
-        else:
-            print("Opción inválida❌. Ingresa 1 o 2.")
+            return
 
-def jugar_batalla():
-    print("Bienvenido a Batalla Naval")
-    print("1. 🎮🎮Jugar contra la PC🎮🎮")
-    print("2. 🙍‍♂️🙍‍♂️Jugar contra otro jugador🙍‍♂️🙍‍♂️")
+
+def jugar():
     opcion = ""
     while opcion != '1' and opcion != '2':
+        print("Bienvenido a Batalla Naval")
+        print("Selecciona un modo de juego:")
+        print("1. Jugar contra la CPU")
+        print("2. Jugar contra otro jugador")
         opcion = input("Selecciona una opción (1 o 2): ")
+
         if opcion == '1':
             jugar_contra_pc()
         elif opcion == '2':
             jugar_contra_jugador()
         else:
-            print("Opción inválida❌. Ingresa 1 o 2.")
+            print("Opción inválida. Inténtalo de nuevo.")
 
-if __name__ == '__main__':
-    jugar_batalla()
+jugar()

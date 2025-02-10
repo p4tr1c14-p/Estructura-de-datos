@@ -53,7 +53,7 @@ def sacar_carta() -> str:
 
 def contar_cartas(carta: str, oro: int, espadas: int, copas: int, bastos: int) -> tuple:
     """
-    Aumenta el contador del palo correspondiente según la carta extraída
+    Aumenta el contador correspondiente según la carta extraída
     :param carta: Carta extraída del mazo
     :param oro: Contador de cartas de Oros
     :param espadas: Contador de cartas de Espadas
@@ -62,13 +62,13 @@ def contar_cartas(carta: str, oro: int, espadas: int, copas: int, bastos: int) -
     :return: Tupla con los nuevos valores de los contadores
     """
     if "Oros" in carta:
-        oro += 1
+        oro = oro + 1
     elif "Espadas" in carta:
-        espadas += 1
+        espadas = espadas + 1
     elif "Copas" in carta:
-        copas += 1
+        copas = copas + 1
     elif "Bastos" in carta:
-        bastos += 1
+        bastos = bastos + 1
     return oro, espadas, copas, bastos
 
 
@@ -84,13 +84,13 @@ def retroceder_caballo(payaso: str, oro: int, espadas: int, copas: int, bastos: 
     :return: Tupla con los nuevos valores de los contadores
     """
     if "Oros" in payaso and oro > 0:
-        oro -= 1
+        oro = oro - 1
     elif "Espadas" in payaso and espadas > 0:
-        espadas -= 1
+        espadas = espadas - 1
     elif "Copas" in payaso and copas > 0:
-        copas -= 1
+        copas = copas - 1
     elif "Bastos" in payaso and bastos > 0:
-        bastos -= 1
+        bastos = bastos - 1
     return oro, espadas, copas, bastos
 
 
@@ -102,15 +102,12 @@ def mostrar_tablero(oro: int, espadas: int, copas: int, bastos: int) -> None:
     :param copas: Contador de cartas de Copas
     :param bastos: Contador de cartas de Bastos
     """
-    print("-------------------------------🏁🏁🏁🚩")
-    nombres = ["Espadas", "Oros", "Copas", "Bastos"]
-    valores = [espadas, oro, copas, bastos]
+    nombres = ["[O]", "[E]", "[C]", "[B]"]
+    valores = [oro, espadas, copas, bastos]
     for indice in range(4):
-        print(f"|       {nombres[indice]}")
-        print("|       (o o)")
-        print("|  /-----\\_/")
-        print("|*  ||----||" + " " * (valores[indice] * 3) + "🐎")
-    print("-------------------------------🏁🏁🏁🚩")
+        print("________")
+        print(f"{nombres[indice]}|" + " " * (valores[indice] * 3) + "🐎")
+    print()
 
 
 def jugar() -> None:
